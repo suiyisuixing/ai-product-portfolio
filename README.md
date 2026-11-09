@@ -1,4 +1,4 @@
-# 魏宇 · AI 产品作品集
+﻿# 魏宇 · AI 产品作品集
 
 西交利物浦大学 · 数据科学与大数据技术本科 · 2028 届
 
@@ -6,9 +6,9 @@
 
 这份作品集展示三个项目的使用问题、关键判断与验证结果。各案例可直接阅读，无需访问私有源码。源码仓库、公开案例和本机体验地址是三件不同的事：本机 `127.0.0.1:8800` / `127.0.0.1:8700` 只在主机启动后可用，**不是**公网演示。
 
-[下载四页作品集 PDF](portfolio/yu-wei-portfolio.pdf)
+[下载五页作品集 PDF](portfolio/yu-wei-portfolio.pdf)
 
-> PDF 已根据 2026-11-09 已核验案例重建可编辑源（`portfolio/yu-wei-portfolio.source.md`）并重新导出；旧版备份在交付目录。案例正文与截图同步反映真实模型修复结果；不沿用历史 mock 的 4.9s 等旧成绩冒充本轮。
+> PDF 由结构化可编辑源 `portfolio/yu-wei-portfolio.source.html`（与 `.source.md` 同步要点）排版导出为 **5 页**；含 ClassNote 截图、AppliedAI/ServeTrace 本轮口径，并恢复银行营销 / Film / QuantLab 原版无关项目段落。不沿用历史 mock 的 4.9s 冒充本轮。
 
 ## 项目
 

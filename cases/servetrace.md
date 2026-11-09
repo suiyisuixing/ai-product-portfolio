@@ -1,4 +1,4 @@
-# ServeTrace｜让模型调用可控制、可定位
+﻿# ServeTrace｜让模型调用可控制、可定位
 
 **个人 AI 调用网关原型 · 2026.11 至今**
 
@@ -40,6 +40,8 @@ flowchart LR
 ```
 
 ## 2026-11-09 管理台与真实模型验收
+
+> 公开截图于 2026-11-09 20:14（Asia/Shanghai）重拍：凭证页无创建横幅完整 Key；测试台输入为掩码占位；请求记录页为日志列表（非登录页）。旧暴露尾号 Key 保持停用，报告不复述完整值。
 
 上游复用已运行的 `qwen3.5-27b-q5_k_m`（Q5_K_M，上下文 16384，`n-gpu-layers=16`）via `http://127.0.0.1:8081/v1`。`UPSTREAM_MODE=http`：上游失败时返回明确错误，不会静默回退 mock。限流后端申请为 memory，实际也为 memory（本机 Redis 未运行，总览/设置中已标明）。
 
@@ -121,3 +123,4 @@ AppliedAI 使用专用调用凭证 `appliedai-workbench` 经 ServeTrace 调用�
 | 截图 | 已替换为 2026-11-09 脱敏新图；历史曾暴露的 Key 已在本机停用（报告不复述旧值） |
 
 源码提交（GitHub `main`）：`d84b861f314db36af1be94333d29daf9ab0d9447`
+
