@@ -104,3 +104,20 @@ AppliedAI 使用专用调用凭证 `appliedai-workbench` 经 ServeTrace 调用�
 - `reports/auth_deny.json`、`reports/rate_limit.md`、`reports/rate_limit_redis.md`：历史协议样例。
 
 [返回作品集](../README.md)
+
+
+## 2026-11-09 修复与复验（相对历史 mock / Compose）
+
+本轮本机直跑端口 **8700**，上游为真实 `http`→8081，与 Compose 默认 mock/18790 **分开表述**：
+
+| 项 | 结果 |
+|---|---|
+| Key 生命周期 UI | 创建（完整 Key 仅一次）→ 脱敏列表 → 名称/配额编辑 → 启停 → 删除 |
+| Trace 归属 | 按唯一 `key_id`，不再只靠后缀 |
+| 失败详情 | 422/上游失败写入可查原因，页面不再只显示「错误：无」 |
+| 限流 | memory 窗口：改配额立即 429 + Retry-After；停用 403；删除 401 |
+| 重启复验 | Key 配额/停用/删除状态与已知 `request_id` 重启后仍可逐条核对 |
+| Redis（ST-6） | **外部阻塞**：本机 Docker 引擎不可用且无 Redis；页面如实显示 memory。解除条件见交付说明 |
+| 截图 | 已替换为 2026-11-09 脱敏新图；历史曾暴露的 Key 已在本机停用（报告不复述旧值） |
+
+源码提交（GitHub `main`）：`d84b861f314db36af1be94333d29daf9ab0d9447`
