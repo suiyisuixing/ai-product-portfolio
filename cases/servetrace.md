@@ -43,7 +43,7 @@ flowchart LR
 
 > 公开截图于 2026-11-09 20:14（Asia/Shanghai）重拍：凭证页无创建横幅完整 Key；测试台输入为掩码占位；请求记录页为日志列表（非登录页）。旧暴露尾号 Key 保持停用，报告不复述完整值。
 
-上游复用已运行的 `qwen3.5-27b-q5_k_m`（Q5_K_M，上下文 16384，`n-gpu-layers=16`）via `http://127.0.0.1:8081/v1`。`UPSTREAM_MODE=http`：上游失败时返回明确错误，不会静默回退 mock。限流后端申请为 memory，实际也为 memory（本机 Redis 未运行，总览/设置中已标明）。
+上游复用已运行的 `qwen3.5-27b-q5_k_m`（Q5_K_M，上下文 16384，`n-gpu-layers=16`）via `http://127.0.0.1:8081/v1`。`UPSTREAM_MODE=http`：上游失败时返回明确错误，不会静默回退 mock。限流后端申请为 redis，本机 Redis（127.0.0.1:6379）已联通：redis_wired=true；健康检查与真实 Key 配额探测可见 X-RateLimit-Backend=redis。
 
 Phase 2 记录见源码仓库 `docs/acceptance/2026-11-09-phase2.md`：
 
@@ -54,7 +54,7 @@ Phase 2 记录见源码仓库 `docs/acceptance/2026-11-09-phase2.md`：
 
 ![管理台总览](../assets/servetrace-overview.png)
 
-![请求测试台真实调用](../assets/servetrace-playground.png)
+![请求测试台演示表单（输入框为掩码占位；本图不单独证明当次已完成上游调用）](../assets/servetrace-playground.png)
 
 ![调用凭证列表脱敏展示](../assets/servetrace-keys-masked.png)
 
@@ -122,5 +122,5 @@ AppliedAI 使用专用调用凭证 `appliedai-workbench` 经 ServeTrace 调用�
 | Redis（ST-6） | **外部阻塞**：本机 Docker 引擎不可用且无 Redis；页面如实显示 memory。解除条件见交付说明 |
 | 截图 | 已替换为 2026-11-09 脱敏新图；历史曾暴露的 Key 已在本机停用（报告不复述旧值） |
 
-源码提交（GitHub `main`）：`d84b861f314db36af1be94333d29daf9ab0d9447`
+源码提交（GitHub `main`）：`53929382aa2ca58122fb386b6158c8aeb44f7142`（本轮修复后准确提交；上轮历史快照曾为 d84b861f…）
 

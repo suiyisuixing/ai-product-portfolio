@@ -56,7 +56,7 @@
   <div class="note">本 PDF 按结构化 HTML 排版导出（非 Markdown 塞入 pre）。案例成绩以 2026-11-09 本机真实模型验收为准；不沿用历史 mock 的 4.9s 等旧数字冒充本轮。</div>
   <h2>ClassNote AI（重点）</h2>
   <p>学生遇到“没有字幕”时，先确认课堂内容是否仍在保存。将音频、转写、翻译状态拆开，提供改选可用模型与先录后转分支，并把模型可用性检查放到开课前。</p>
-  <img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/classnote-model-manager.jpg" alt="ClassNote 模型管理界面"/>
+  <img class="shot sm" src="../assets/classnote-model-manager.jpg" alt="ClassNote 模型管理界面"/>
   <p class="meta">上图：模型已安装与实际可加载分别呈现；不代表一次课堂转写效果测试。</p>
   <div class="foot">魏宇 · AI 产品作品集 · 第 1 页 / 共 5 页 · 2026-11-09</div>
 </section>
@@ -77,11 +77,11 @@
     <li>模型：<code>qwen3.5-27b-q5_k_m</code>（Q5_K_M，ctx 16384，n-gpu-layers=16）via 已有 llama-server <code>127.0.0.1:8081</code></li>
     <li>Phase1 提问「仓库代号是什么？」：回答含「芦潮港灯塔-7719」并引用《青浦演示手册》；追问口令「桂花糯米-42」；无依据题拒绝</li>
     <li>本轮 verify_phase1 实测耗时约 9.8s 量级（以当次脚本输出为准），不使用历史 mock 4.9s</li>
-    <li>Phase3 经 ServeTrace：示例 <code>req_617280ddf2674a1b</code> 端到端约 4.9s 为网关往返量级记录，与完整问答耗时含义不同</li>
+    <li>Phase3 经 ServeTrace：示例 <code>req_617280ddf2674a1b</code> 端到端 4857ms、网关往返 4847ms、网关日志 latency_ms=4140（三者口径不同；不能把端到端说成网关，也不把该真实样本称为 mock）</li>
   </ul>
   <div class="grid2">
-    <div><img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/appliedai-login.png" alt="登录页"/><p class="meta">登录页</p></div>
-    <div><img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/appliedai-cited-answer.png" alt="带引用回答"/><p class="meta">带引用的真实回答</p></div>
+    <div><img class="shot sm" src="../assets/appliedai-login.png" alt="登录页"/><p class="meta">登录页</p></div>
+    <div><img class="shot sm" src="../assets/appliedai-cited-answer.png" alt="带引用回答"/><p class="meta">带引用的真实回答</p></div>
   </div>
   <div class="foot">魏宇 · AI 产品作品集 · 第 2 页 / 共 5 页 · AppliedAI</div>
 </section>
@@ -89,10 +89,10 @@
 <section class="page" id="p3">
   <h1>AppliedAI · 权限与联通证据</h1>
   <div class="grid2">
-    <div><img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/appliedai-library.png" alt="资料库"/><p class="meta">资料库列表</p></div>
-    <div><img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/appliedai-acl-guest.png" alt="访客隔离"/><p class="meta">访客看不到内部资料</p></div>
+    <div><img class="shot sm" src="../assets/appliedai-library.png" alt="资料库"/><p class="meta">资料库列表</p></div>
+    <div><img class="shot sm" src="../assets/appliedai-acl-guest.png" alt="访客隔离"/><p class="meta">访客看不到内部资料</p></div>
   </div>
-  <img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/appliedai-gateway-cited-answer.png" alt="经网关回答"/>
+  <img class="shot sm" src="../assets/appliedai-gateway-cited-answer.png" alt="经网关回答"/>
   <p class="meta">经 ServeTrace 的带引用回答；完整 Key 不出现在公开材料。</p>
   <div class="warn">限制：本机演示非生产；Redis 真实限流在本验收环境仍外部阻塞（memory 后端）。量化结果不代表企业部署 SLA。</div>
   <div class="foot">魏宇 · AI 产品作品集 · 第 3 页 / 共 5 页 · AppliedAI 证据</div>
@@ -110,12 +110,12 @@
     <li>/v1/models 429 会记入 trace（本轮已复核）</li>
   </ul>
   <div class="grid2">
-    <div><img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/servetrace-keys-masked.png" alt="凭证列表脱敏"/><p class="meta">凭证列表（脱敏，无创建横幅完整 Key）</p></div>
-    <div><img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/servetrace-playground.png" alt="请求测试"/><p class="meta">请求测试台（输入框为掩码占位）</p></div>
+    <div><img class="shot sm" src="../assets/servetrace-keys-masked.png" alt="凭证列表脱敏"/><p class="meta">凭证列表（脱敏，无创建横幅完整 Key）</p></div>
+    <div><img class="shot sm" src="../assets/servetrace-playground.png" alt="请求测试"/><p class="meta">请求测试台（输入框为掩码占位）</p></div>
   </div>
   <div class="grid2">
-    <div><img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/servetrace-logs.png" alt="请求记录"/><p class="meta">请求记录页</p></div>
-    <div><img class="shot sm" src="file:///D:/grok-bot/%E9%A1%B9%E7%9B%AE/ai-product-portfolio/assets/servetrace-overview.png" alt="总览"/><p class="meta">总览与上游探测</p></div>
+    <div><img class="shot sm" src="../assets/servetrace-logs.png" alt="请求记录"/><p class="meta">请求记录页</p></div>
+    <div><img class="shot sm" src="../assets/servetrace-overview.png" alt="总览"/><p class="meta">总览与上游探测</p></div>
   </div>
   <div class="foot">魏宇 · AI 产品作品集 · 第 4 页 / 共 5 页 · ServeTrace</div>
 </section>
