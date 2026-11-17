@@ -1,35 +1,30 @@
-﻿# 魏宇 · AI 产品作品集
+# 魏宇 · AI 产品作品集
 
 西交利物浦大学 · 数据科学与大数据技术本科 · 2028 届
 
-关注 AI 应用体验、需求设计与效果评测。我主导个人项目的产品构思、方案选择、原型制作和问题修复，使用 AI 编程工具辅助实现与调试。
+关注 AI 应用体验、需求拆解与产品验证。个人项目中负责产品构思、流程设计、方案取舍和迭代推进，使用 AI 编程工具辅助实现与调试；课程团队项目中负责具体功能迭代。
 
-这份作品集展示三个项目的使用问题、关键判断与验证结果。各案例可直接阅读，无需访问私有源码。源码仓库、公开案例和本机体验地址是三件不同的事：本机 `127.0.0.1:8800` / `127.0.0.1:8700` 只在主机启动后可用，**不是**公网演示。
+[阅读四页作品集 PDF](portfolio/yu-wei-portfolio.pdf) · [下载 Word](portfolio/yu-wei-portfolio.docx) · [阅读纯文本](portfolio/yu-wei-portfolio.source.txt)
 
-[下载五页作品集 PDF](portfolio/yu-wei-portfolio.pdf)
+## 主要项目
 
-> PDF 由结构化可编辑源 `portfolio/yu-wei-portfolio.source.html`（与 `.source.md` 同步要点）排版导出为 **5 页**；含 ClassNote 截图、AppliedAI/ServeTrace 本轮口径，并恢复银行营销 / Film / QuantLab 原版无关项目段落。不沿用历史 mock 的 4.9s 冒充本轮。
-
-## 项目
-
-| 项目 | 解决的问题 | 主要设计与证据 |
+| 项目 | 使用场景 | 产品判断与证据 |
 | --- | --- | --- |
-| [ClassNote AI](cases/classnote-ai.md) | 课堂录音正常却没有字幕时，如何保留记录并给出下一步操作 | 模型预检、先录后转、状态分离；真实界面与历史恢复记录 |
-| [AppliedAI Platform](cases/appliedai-platform.md) | 内部知识库中，怎样限制进入生成上下文的资料，并给出有来源的真实回答 | 中文语义检索、权限对照、本机 Qwen 带引用问答，以及经 ServeTrace 可对上的请求编号 |
-| [ServeTrace](cases/servetrace.md) | 模型调用怎样统一鉴权、限流、重试与请求定位 | 管理台凭证与配额、真实模型测试台、Memory 限流（当前环境未开 Redis）及与 AppliedAI 的记录联通 |
+| [ClassNote AI](cases/classnote-ai.md) | 双语课堂录音、转写翻译、课件与知识查找 | 将课堂记录与资料整理放在同一工作台；模型预检、先录后转、分阶段状态与历史续录恢复 |
+| [QuantLab](cases/quantlab.md) | 投资学习中的历史比较、模拟练习与复盘 | 已发布课程产品；6 只 ETF、1,416 个共同有效交易日；模型生成方案、用户确认、固定引擎计算 |
+| [AppliedAI Platform](cases/appliedai-platform.md) | 有权限边界的知识库问答 | 生成前过滤资料；FTS5 与 Chroma 各补验 9 组同题双身份；保留历史真实本地模型与引用验收 |
 
-## 重点案例：ClassNote AI
+## 数据与技术补充
 
-学生遇到“没有字幕”时，首先需要确认课堂内容是否仍在保存。我将音频、转写和翻译的状态拆开，提供改选可用模型和先录后转的明确分支，并把模型实际可用性检查放到开课前。
+- [数据分析与 SQL](cases/data-analysis.md)：银行营销阈值与联系工作量的取舍；38,105 条电影关联源记录的清洗、异常隔离和查询验证。
+- [ServeTrace 调用治理](cases/servetrace.md)：非流式调用中的鉴权、配额、重试提示与请求定位；历史真实模型联通与模拟协议结果分开记录。
 
-[阅读完整案例与界面](cases/classnote-ai.md)
+## 如何阅读这些材料
 
-## 数据与 SQL 项目
+案例按“场景—方案—验证结果”组织，附真实界面与已注明条件的数字。2026-11-17 的 FTS5/Chroma 检索补验、2026-11-09 的真实本机模型验收和 2026-11-02 的历史 mock 用例分别标注日期与环境，不合并成同一次测试。
 
-[Film Database System](https://github.com/suiyisuixing/film-database-system) 是由课程延展的数据建模与查询项目，包含 PostgreSQL 关系模型、12 条分析查询及数据质量检查设计。可查看 [SQL 查询](https://github.com/suiyisuixing/film-database-system/blob/main/sql/07_analysis_queries.sql) 与 [项目验证状态](https://github.com/suiyisuixing/film-database-system/blob/main/PROJECT_STATUS.md)。
+ClassNote 的资料知识图展示实际安装版的资料组织能力；QuantLab 配图展示正式站已保存结果。它们各自说明对应功能，不充当转写准确率或真人用户增长证据。
 
-## 阅读这些结果时
+公开仓库仅提供案例、脱敏界面和汇总结果。本机服务地址需要本人启动，不能作为招聘方直接访问的公网演示。代码、功能验收和材料整理包含 AI 辅助；面试中重点说明本人理解和负责的需求、判断与取舍。
 
-案例中同时保留了 2026-11-02 的历史本地记录（含 mock 条件）和 2026-11-09 的真实本机模型验收。两者分开书写，不会把历史 mock 成绩改写成真实模型成绩。量化结果对应具体原型行为，不代表企业部署、商业收益或生产表现。公开材料只含脱敏案例、界面与汇总结果；演示账号和完整调用 Key 不进入本仓库。
-
-最近整理：2026-11-09
+最近整理：2026-11-17
