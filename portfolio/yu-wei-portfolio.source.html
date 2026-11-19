@@ -2,21 +2,275 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>作品集来源与导出说明</title>
-<style>body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;max-width:760px;margin:64px auto;padding:0 24px;color:#20242a;line-height:1.8}h1{font-size:28px;line-height:1.4}a{color:#1d557e}p,li{font-size:17px}.date{color:#66727f;font-size:14px}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>魏宇 · AI 产品与数据分析作品集</title>
+<style>
+:root { color-scheme: light; font-family: -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; color: #1d2631; background: #fff; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 880px; margin: 0 auto; padding: 42px clamp(16px,4vw,48px) 80px; line-height: 1.72; overflow-wrap: anywhere; }
+h1,h2,h3 { line-height: 1.35; }
+h1,h2 { color: #172e45; }
+h1 { font-size: clamp(1.7rem,4vw,2.4rem); margin: 0 0 .55em; }
+h2 { font-size: clamp(1.35rem,3.5vw,1.78rem); margin: 2.15em 0 .5em; }
+h3 { font-size: 1.16rem; margin: 1.5em 0 .5em; }
+p { margin: .8em 0; }
+a { color: #205387; text-underline-offset: .15em; }
+figure { margin: 1.3em 0; }
+img { display: block; width: auto; max-width: 100%; height: auto; margin: 0 auto; }
+figcaption { margin: .4em 0 0; color: #475767; font-size: .9rem; }
+.table-wrap { margin: 1em 0; max-width: 100%; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; line-height: 1.55; }
+th,td { padding: .5em .7em; border: 1px solid #ccd4dc; vertical-align: top; }
+th { background: #eef2f5; text-align: left; }
+@media (max-width: 600px) { main { padding-top: 24px; } h1 { font-size: 1.5rem; } th,td { padding: .4em; } table { min-width: 30rem; } .table-wrap:has(th[style*="right"]) table { min-width: 100%; font-size: .9rem; } }
+@media print { main { max-width: none; padding: 0; } h2,h3 { break-after: avoid; } figure,tr { break-inside: avoid; } }
+</style>
 </head>
 <body>
-<h1>当前作品集来源与导出说明</h1>
-<p class="date">2026-11-17</p>
-<p>当前四页作品集以 Word 为可编辑来源，PDF 为对应的固定排版导出，TXT 用于检索和文本核对。本页是来源说明，不是正文排版源。</p>
-<ul>
-<li><a href="yu-wei-portfolio.docx">可编辑 Word</a></li>
-<li><a href="yu-wei-portfolio.pdf">四页 PDF</a></li>
-<li><a href="yu-wei-portfolio.source.txt">纯文本</a></li>
-<li><a href="../README.md">网页案例入口</a></li>
-</ul>
-<p>正文依次为 ClassNote、QuantLab、权限检索与调用治理、数据分析与 SQL。网页案例另保留带日期的历史验收细节，应分别核对时间与环境。</p>
-<p>旧 HTML 导出稿已被本说明替换，不能用它重新生成当前 PDF。根目录与本目录的 PDF 应保持同一版本；更新时同步 Word、PDF、TXT，并核对页数、文字、图片说明和链接。</p>
+<main><h1 id="魏宇--ai-产品与数据分析作品集">魏宇 · AI 产品与数据分析作品集</h1>
+<p>2026 年 11 月 19 日</p>
+<p><a href="yu-wei-portfolio.pdf">四页 PDF</a> · <a href="yu-wei-portfolio.docx">Word</a> · <a href="../README.md">项目首页</a></p>
+<h2 id="quantlab--ai-投教与历史模拟">QuantLab ｜ AI 投教与历史模拟</h2>
+<p>7 人课程团队（ENT207），负责回测与 AI 教练产品迭代。Softr 正式站已接入 DeepSeek Flash / Pro。</p>
+<p>投资学习者需要知道，改动持仓比例会怎样影响历史回撤和费用。用户从 AI 教练获取方案后，程序先检查字段与参数范围，用户核对并确认，再由固定引擎计算收益、回撤与费用。保存的记录绑定配置、数据快照与引擎版本，可重新打开、对照并写入复盘笔记。课程模拟使用虚拟资金。</p>
+<h3 id="11-月-19-日双记录复盘">11 月 19 日双记录复盘</h3>
+<p>记录 A 使用自定义比例，记录 B 均分持仓。引擎重算得到两组方向相反的比较结果。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>最大回撤的计算期间</th>
+<th style="text-align: right;">A · 自定义比例</th>
+<th style="text-align: right;">B · 均分持仓</th>
+<th>回撤较低的一条记录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全期</td>
+<td style="text-align: right;">48.87%</td>
+<td style="text-align: right;">48.49%</td>
+<td>B</td>
+</tr>
+<tr>
+<td>留出期</td>
+<td style="text-align: right;">17.86%</td>
+<td style="text-align: right;">20.10%</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+</div><p>AI 依据留出期数据写出“A 回撤略低”，页面上方却只有全期最大回撤。读者在表里会看到相反的排序。我据此提出将全期与留出期并列展示，让每句比较都能对上表里的记录和期间。</p>
+<figure><img src="../assets/quantlab-dual-record-review-20261119.jpg" alt="正式站双记录复盘"><figcaption>正式站双记录复盘</figcaption></figure>
+<figure><img src="../assets/quantlab-saved-result-20261117.jpg" alt="QuantLab 正式站已保存回测快照"><figcaption>QuantLab 正式站已保存回测快照</figcaption></figure>
+<p>已保存快照对齐 6 只 ETF 的 1,416 个共同交易日，双边费用设为 5 bps，可查看 5 组基准资金曲线并进入复盘。</p>
+<h3 id="10-位组外试用者提出了哪些问题">10 位组外试用者提出了哪些问题</h3>
+<p>11 月 14 至 16 日，团队汇总了 10 位组外试用者的匿名反馈，由组长确认反馈主题。下表列出据此已落地的改动。逐人任务完成率和改动后的复测数据尚未收齐。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>环节</th>
+<th>试用中遇到的问题</th>
+<th>已落地的改动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首次体验</td>
+<td>首次使用就要设定 ETF、日期、策略和费率，用户希望注册前先试</td>
+<td>增加预设引导练习，开放免登录的等权与自定义比例对比示例</td>
+</tr>
+<tr>
+<td>行情进入练习</td>
+<td>行情页选好的 ETF 和区间在切页后被重置</td>
+<td>把已选标的和日期区间一起带入模拟练习</td>
+</tr>
+<tr>
+<td>保存与管理</td>
+<td>保存需要滚回设置区，旧示例也缺少删除入口</td>
+<td>将保存与复盘笔记移到结果旁，删除记录时二次确认</td>
+</tr>
+<tr>
+<td>AI 教练与仓位</td>
+<td>单一示例问题难以引导下一步，有人希望留下部分现金</td>
+<td>增加快捷提问，分开策划和复盘；支持权重合计不超过 100%，余款留作虚拟现金</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="appliedai-platform--servetrace--企业知识问答与调用治理">AppliedAI Platform &amp; ServeTrace ｜ 企业知识问答与调用治理</h2>
+<p>个人原型。知识问答同时受两项条件约束：文档能回答问题，提问者也有权查看文档。AppliedAI 负责资料权限、引用和工具调用，ServeTrace 负责模型调用的鉴权、限流与请求排查。</p>
+<h3 id="把资料权限放在哪一步">把资料权限放在哪一步</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>受限资料何时可见</th>
+<th>取舍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>提示词保密</td>
+<td>受限片段已进入模型上下文，依靠指令约束回答</td>
+<td>权限控制依赖模型遵循指令</td>
+</tr>
+<tr>
+<td>回答生成后过滤</td>
+<td>受限片段已参与生成，再在输出中找关键词</td>
+<td>改写可能漏检，适合作为补充检查</td>
+</tr>
+<tr>
+<td>检索层前置 ACL</td>
+<td>按当前身份的权限限定可检索的资料，受限片段不进入上下文</td>
+<td>采用此方案，同时处理文档标签与用户撤权后的历史记录</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="权限测试与工具调用">权限测试与工具调用</h3>
+<p>在 5 篇演示文档上，分别对 FTS5 与 Chroma 运行同题双身份测试，再用公开题检查是否把访客全部误拦。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>每条检索路径的检查</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未授权身份查询受限资料</td>
+<td>0/9 组取到受限内容</td>
+</tr>
+<tr>
+<td>授权身份查询同一资料</td>
+<td>9/9 组取到受限内容</td>
+</tr>
+<tr>
+<td>公开题</td>
+<td>2/2 组通过</td>
+</tr>
+</tbody>
+</table>
+</div><p>这个样本覆盖访问规则，大规模文档库的语义召回仍需单独评测。本地 Qwen3.5-27B 与 BGE 跑通了带引用的问答、无依据时显式拒答和访客隔离。撤权后，历史回答中受限内容脱敏，并从后续问答上下文移出。真实模型调用异常时显式返回失败。工具注册表校验调用参数，区分执行失败、超时和未知工具。固定模拟用例中路由匹配 10/10，覆盖了三类异常；真实模型的多步工具调用仍待评测。</p>
+<figure><img src="../assets/appliedai-gateway-cited-answer.png" alt="AppliedAI 通过 ServeTrace 调用本地模型，展示引用来源卡片与请求编号"><figcaption>AppliedAI 通过 ServeTrace 调用本地模型，展示引用来源卡片与请求编号</figcaption></figure>
+<h3 id="用请求编号定位调用问题">用请求编号定位调用问题</h3>
+<p>Key 创建时仅展示一次，列表显示掩码。停用的 Key 返回 403，删除后再次使用返回 401。按 Key 限流时返回 429，并用 Retry-After 告知调用方何时重试。Redis 和内存均可作为限流后端。网关只转发非流式请求，收到 stream=true 时返回错误。</p>
+<p>同一请求通过 X-Request-Id 关联日志，区分整次问答耗时与网关往返耗时。控制台支持按时间、调用者、结果与编号查找请求，默认不记录完整提示词。</p>
+<figure><img src="../assets/servetrace-logs.png" alt="ServeTrace 控制台中的成功请求和限流记录"><figcaption>ServeTrace 控制台中的成功请求和限流记录</figcaption></figure>
+<h2 id="classnote-ai--本地优先的双语课堂工作台">ClassNote AI ｜ 本地优先的双语课堂工作台</h2>
+<p>个人 macOS 项目，面向英语授课环境。听课时，学生需要在录音、英文课件、翻译和笔记之间切换。把采集、转写翻译和课后检索放在本机，能让课堂记录少依赖教室网络；代价是学生要在自己的电脑上安装、加载合适的模型。</p>
+<h3 id="录音在继续字幕为什么是空的">录音在继续，字幕为什么是空的</h3>
+<p>一次课堂自用中，所选转写模型缺失，录音仍在继续，字幕却始终空白。界面也没有告诉我声音是否已保存。此后将录音保存、转写与翻译分别显示状态。开课前先检查模型能否加载；缺少依赖时，可改选可用模型或先录后转。</p>
+<figure><img src="../assets/classnote-model-manager.jpg" alt="ClassNote AI 模型实验室"><figcaption>ClassNote AI 模型实验室</figcaption></figure>
+<p>模型实验室列出 faster-whisper 的 tiny、base、small、medium 与 large-v3 档位，默认推荐 base。界面说明不同档位的速度、内存与准确率取舍，也区分“已安装”和“已验证可加载”。课堂内容默认在本机处理。</p>
+<h3 id="从一次课堂记录延伸到课后复习">从一次课堂记录延伸到课后复习</h3>
+<p>结合自用与同学试用反馈，调整竖版 PDF 课件的阅读和翻页体验，并优化资料检索导航。交付可安装的 macOS 版本（Build 1050），验证了重新打开课程和恢复已保存续录，找回约 76.8 分钟历史录音。专业术语识别误差及连续使用情况仍待单独测量。</p>
+<h2 id="数据分析与-sql--银行外呼预算与-film-db">数据分析与 SQL ｜ 银行外呼预算与 Film DB</h2>
+<h3 id="银行营销外呼阈值和人力预算怎样改变选择">银行营销外呼：阈值和人力预算怎样改变选择</h3>
+<p>UCI Bank Marketing 含 45,211 条样本。外呼前还不知道通话时长，因此剔除 duration，使用训练集拟合 PySpark 预处理和逻辑回归，在 8,907 条独立测试样本上评估。</p>
+<p>把阈值从 0.50 降到 0.20，会多选 677 个外呼对象，其中 268 个是历史正例，409 个是误报，新增名单的历史命中率为 39.6%。</p>
+<figure><img src="../assets/threshold_tradeoff.png" alt="银行外呼测试集中的阈值、正例命中与误报"><figcaption>银行外呼测试集中的阈值、正例命中与误报</figcaption></figure>
+<p><strong>ROI 敏感性。</strong> 以“命中历史正例数 × 假设单客价值 − 入选名单人数 × 假设单次外呼成本”估算净值。当单客价值固定为 200，阈值选择会随单次联系成本改变。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>假设单次成本 / 单客价值</th>
+<th style="text-align: right;">阈值 0.20 净值</th>
+<th style="text-align: right;">阈值 0.50 净值</th>
+<th style="text-align: right;">两者中净值较高的阈值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20 / 200</td>
+<td style="text-align: right;">74,480</td>
+<td style="text-align: right;">34,420</td>
+<td style="text-align: right;">0.20</td>
+</tr>
+<tr>
+<td>50 / 200</td>
+<td style="text-align: right;">45,500</td>
+<td style="text-align: right;">25,750</td>
+<td style="text-align: right;">0.20</td>
+</tr>
+<tr>
+<td>100 / 200</td>
+<td style="text-align: right;">−2,800</td>
+<td style="text-align: right;">11,300</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>固定外呼预算。</strong> 如果只够联系 K 人，就按模型评分从高到低取前 K 个候选人。扩大名单能覆盖更多历史正例，也会摊薄命中率。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>外呼名额</th>
+<th style="text-align: right;">名单内历史正例</th>
+<th style="text-align: right;">历史命中率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top 100</td>
+<td style="text-align: right;">81</td>
+<td style="text-align: right;">81.0%</td>
+</tr>
+<tr>
+<td>Top 200</td>
+<td style="text-align: right;">148</td>
+<td style="text-align: right;">74.0%</td>
+</tr>
+<tr>
+<td>Top 500</td>
+<td style="text-align: right;">296</td>
+<td style="text-align: right;">59.2%</td>
+</tr>
+<tr>
+<td>Top 966（对应阈值 0.20）</td>
+<td style="text-align: right;">469</td>
+<td style="text-align: right;">48.6%</td>
+</tr>
+</tbody>
+</table>
+</div><p>成本与单客价值为假设参数。历史标签衡量名单命中情况，要估计外呼带来的增量转化，还需对照实验。</p>
+<h3 id="film-database-system清洗异常隔离与统计分母">Film Database System：清洗、异常隔离与统计分母</h3>
+<p>4 张归档源表共有 38,105 行。暂存导入后校验类型、混合日期和外键，38,006 行进入正式表，99 行按原因隔离。修复了 UNION ALL 跨表类型冲突和 ISO / Excel 混合日期解析问题，恢复 83 个出生年与 1 个死亡年，形成 12 条分析 SQL 和 4 张视图。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>正式表</th>
+<th style="text-align: right;">入库行数</th>
+<th style="text-align: right;">隔离行数</th>
+<th>对分析口径的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>films（电影）</td>
+<td style="text-align: right;">4,949</td>
+<td style="text-align: right;">0</td>
+<td>952 部电影有评分，覆盖率为 952 / 4,949，即 19.2%；一部电影可以有多条评分</td>
+</tr>
+<tr>
+<td>people（人物）</td>
+<td style="text-align: right;">8,397</td>
+<td style="text-align: right;">0</td>
+<td>修复混合日期解析后，有效出生年由 6,069 增至 6,152</td>
+</tr>
+<tr>
+<td>roles（角色关联）</td>
+<td style="text-align: right;">19,715</td>
+<td style="text-align: right;">76</td>
+<td>隔离引用不存在影片的孤儿记录，人物关联统计包含导演等不同角色</td>
+</tr>
+<tr>
+<td>reviews（评分）</td>
+<td style="text-align: right;">4,945</td>
+<td style="text-align: right;">23</td>
+<td>隔离缺影片 ID 的 19 行及外键无效的 4 行；源表缺少 genre 与 review_date，限制了分类型和时间趋势分析</td>
+</tr>
+</tbody>
+</table>
+</div></main>
 </body>
 </html>
