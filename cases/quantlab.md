@@ -1,6 +1,6 @@
 # QuantLab · AI 回测策划与双记录复盘
 
-7 人课程团队 · 我负责回测与 AI 教练迭代 · [Softr 免登录示例直达](https://edmund45501.softr.app/about?try=1&lang=zh)
+7 人课程团队 · 我负责回测与 AI 教练迭代 · [Softr 免登录示例直达](https://edmund45501.softr.app/about?try=1&lang=zh) · [查看完整全线 PRD](../prds/quantlab-prd.md)
 
 学习者想比较两种 ETF 配置，需要知道差别来自持仓、费用还是比较期间。正式站接入 DeepSeek Flash / Pro。AI 把练习意图整理成方案，程序检查字段与取值范围，用户核对并确认后，固定引擎才计算收益、最大回撤和费用。保存结果时一并记录配置、数据快照与引擎版本，重开记录后可以核对同一组数。
 

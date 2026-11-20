@@ -1,6 +1,6 @@
 # AppliedAI Platform & ServeTrace · 企业知识问答与调用治理
 
-个人原型 · 检索权限、工具调用规则与非流式模型网关
+个人原型 · 检索权限、工具调用规则与非流式模型网关 · [查看完整全线 PRD](../prds/appliedai-servetrace-prd.md)
 
 ## 同一个问题，谁有权看哪些依据？
 
