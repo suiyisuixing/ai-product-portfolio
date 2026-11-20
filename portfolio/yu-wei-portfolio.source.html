@@ -145,15 +145,15 @@ th { background: #eef2f5; text-align: left; }
 <td>9/9 组取到受限内容</td>
 </tr>
 <tr>
-<td>公开题</td>
-<td>2/2 组通过</td>
+<td>公开题对照（1 道公开题 × 双身份各 1 次）</td>
+<td>2/2 次通过</td>
 </tr>
 </tbody>
 </table>
 </div><p>这个样本覆盖访问规则，大规模文档库的语义召回仍需单独评测。本地 Qwen3.5-27B 与 BGE 跑通了带引用的问答、无依据时显式拒答和访客隔离。撤权后，历史回答中受限内容脱敏，并从后续问答上下文移出。真实模型调用异常时显式返回失败。工具注册表校验调用参数，区分执行失败、超时和未知工具。固定模拟用例中路由匹配 10/10，覆盖了三类异常；真实模型的多步工具调用仍待评测。</p>
 <figure><img src="../assets/appliedai-gateway-cited-answer.png" alt="AppliedAI 通过 ServeTrace 调用本地模型，展示引用来源卡片与请求编号"><figcaption>AppliedAI 通过 ServeTrace 调用本地模型，展示引用来源卡片与请求编号</figcaption></figure>
 <h3 id="用请求编号定位调用问题">用请求编号定位调用问题</h3>
-<p>Key 创建时仅展示一次，列表显示掩码。停用的 Key 返回 403，删除后再次使用返回 401。按 Key 限流时返回 429，并用 Retry-After 告知调用方何时重试。Redis 和内存均可作为限流后端。网关只转发非流式请求，收到 stream=true 时返回错误。</p>
+<p>Key 创建时仅展示一次，列表显示掩码。停用的 Key 返回 403，删除后再次使用返回 401。按 Key 限流时返回 429，并用 Retry-After 告知调用方何时重试。Redis 和内存均可作为限流后端。本次 AppliedAI 联调采用非流式请求；早期网关版本拒绝 stream=true（HTTP 400），2026-11-09 源仓版本已支持 SSE，真实上游 SSE 待复测。</p>
 <p>同一请求通过 X-Request-Id 关联日志，区分整次问答耗时与网关往返耗时。控制台支持按时间、调用者、结果与编号查找请求，默认不记录完整提示词。</p>
 <figure><img src="../assets/servetrace-logs.png" alt="ServeTrace 控制台中的成功请求和限流记录"><figcaption>ServeTrace 控制台中的成功请求和限流记录</figcaption></figure>
 <h2 id="classnote-ai--本地优先的双语课堂工作台">ClassNote AI ｜ 本地优先的双语课堂工作台</h2>
