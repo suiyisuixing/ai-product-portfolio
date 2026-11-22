@@ -1,276 +1,447 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>魏宇 · AI 产品与数据分析作品集</title>
 <style>
-:root { color-scheme: light; font-family: -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; color: #1d2631; background: #fff; }
-* { box-sizing: border-box; }
-body { margin: 0; }
-main { max-width: 880px; margin: 0 auto; padding: 42px clamp(16px,4vw,48px) 80px; line-height: 1.72; overflow-wrap: anywhere; }
-h1,h2,h3 { line-height: 1.35; }
-h1,h2 { color: #172e45; }
-h1 { font-size: clamp(1.7rem,4vw,2.4rem); margin: 0 0 .55em; }
-h2 { font-size: clamp(1.35rem,3.5vw,1.78rem); margin: 2.15em 0 .5em; }
-h3 { font-size: 1.16rem; margin: 1.5em 0 .5em; }
-p { margin: .8em 0; }
-a { color: #205387; text-underline-offset: .15em; }
-figure { margin: 1.3em 0; }
-img { display: block; width: auto; max-width: 100%; height: auto; margin: 0 auto; }
-figcaption { margin: .4em 0 0; color: #475767; font-size: .9rem; }
-.table-wrap { margin: 1em 0; max-width: 100%; overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; line-height: 1.55; }
-th,td { padding: .5em .7em; border: 1px solid #ccd4dc; vertical-align: top; }
-th { background: #eef2f5; text-align: left; }
-@media (max-width: 600px) { main { padding-top: 24px; } h1 { font-size: 1.5rem; } th,td { padding: .4em; } table { min-width: 30rem; } .table-wrap:has(th[style*="right"]) table { min-width: 100%; font-size: .9rem; } }
-@media print { main { max-width: none; padding: 0; } h2,h3 { break-after: avoid; } figure,tr { break-inside: avoid; } }
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Helvetica Neue", "STHeiti", sans-serif;
+    font-weight: 300;
+    color: #1A202C;
+    font-size: 9.1pt;
+    line-height: 1.46;
+    width: 210mm;
+  }
+  .page {
+    page-break-after: always;
+    width: 210mm;
+    height: 297mm;
+    padding: 13mm 15mm 12mm 15mm;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .page:last-child {
+    page-break-after: auto;
+  }
+  .p-header {
+    border-bottom: 1.4pt solid #1E3A5F;
+    padding-bottom: 5.5pt;
+    margin-bottom: 7pt;
+  }
+  .p-kicker {
+    font-size: 8pt;
+    font-weight: 600;
+    color: #1D4ED8;
+    letter-spacing: 0.6pt;
+    text-transform: uppercase;
+    margin-bottom: 2pt;
+  }
+  .p-title {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 2pt;
+  }
+  .p-sub {
+    font-size: 8.6pt;
+    color: #475569;
+  }
+  .lead {
+    font-size: 9.1pt;
+    color: #1E293B;
+    background: #F8FAFC;
+    border-left: 3pt solid #1E3A5F;
+    padding: 5pt 8pt;
+    margin-bottom: 7pt;
+    text-align: justify;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8pt;
+    margin-bottom: 7pt;
+  }
+  .fig {
+    border: 0.6pt solid #CBD5E1;
+    border-radius: 4pt;
+    padding: 4pt;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+  }
+  .fig img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2pt;
+  }
+  .fig-h-fixed img {
+    width: 100%;
+    height: 54mm;
+    object-fit: contain;
+    background: #F8FAFC;
+  }
+  .fig-cap {
+    font-size: 7.7pt;
+    color: #64748B;
+    margin-top: 3pt;
+    line-height: 1.35;
+  }
+  h3 {
+    font-size: 9.8pt;
+    font-weight: 700;
+    color: #1E3A5F;
+    margin-top: 5.5pt;
+    margin-bottom: 3.5pt;
+  }
+  p.body {
+    margin-bottom: 4.5pt;
+    text-align: justify;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7pt;
+    margin-bottom: 5.5pt;
+  }
+  .card {
+    border: 0.6pt solid #E2E8F0;
+    border-radius: 4pt;
+    padding: 5.5pt 7.5pt;
+    background: #FFFFFF;
+  }
+  .card-title {
+    font-size: 8.9pt;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 2.5pt;
+  }
+  .card p {
+    font-size: 8.4pt;
+    color: #334155;
+    line-height: 1.44;
+    text-align: justify;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2.5pt;
+    margin-bottom: 5.5pt;
+    font-size: 8.3pt;
+  }
+  th {
+    background: #1E3A5F;
+    color: #FFFFFF;
+    font-weight: 600;
+    text-align: left;
+    padding: 3.8pt 5.5pt;
+    border: 0.5pt solid #1E3A5F;
+  }
+  td {
+    padding: 3.5pt 5.5pt;
+    border: 0.5pt solid #CBD5E1;
+    color: #1E293B;
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  tr:nth-child(even) td {
+    background: #F8FAFC;
+  }
+  .note {
+    font-size: 7.9pt;
+    color: #64748B;
+    margin-top: 2pt;
+    line-height: 1.38;
+  }
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4pt;
+    margin: 2pt 0 7pt 0;
+  }
+  .flow-step {
+    flex: 1;
+    background: #EFF6FF;
+    border: 0.6pt solid #BFDBFE;
+    border-radius: 3.5pt;
+    padding: 4pt 4.5pt;
+    text-align: center;
+    font-size: 8pt;
+    font-weight: 600;
+    color: #1E3A5F;
+  }
+  .flow-arrow {
+    color: #64748B;
+    font-size: 9.5pt;
+    font-weight: 700;
+  }
+  .footer {
+    margin-top: auto;
+    border-top: 0.5pt solid #E2E8F0;
+    padding-top: 4pt;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: #94A3B8;
+  }
+  .footer a {
+    color: #1D4ED8;
+    text-decoration: none;
+  }
+  strong {
+    color: #0F172A;
+    font-weight: 700;
+  }
+  code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 7.9pt;
+    background: #F1F5F9;
+    padding: 0.5pt 2pt;
+    border-radius: 2pt;
+  }
 </style>
 </head>
 <body>
-<main><h1 id="魏宇--ai-产品与数据分析作品集">魏宇 · AI 产品与数据分析作品集</h1>
-<p>2026 年 11 月 19 日</p>
-<p><a href="yu-wei-portfolio.pdf">四页 PDF</a> · <a href="yu-wei-portfolio.docx">Word</a> · <a href="../README.md">项目首页</a></p>
-<h2 id="quantlab--ai-投教与历史模拟">QuantLab ｜ AI 投教与历史模拟</h2>
-<p>7 人课程团队（ENT207），负责回测与 AI 教练产品迭代。Softr 正式站已接入 DeepSeek Flash / Pro。</p>
-<p>投资学习者需要知道，改动持仓比例会怎样影响历史回撤和费用。用户从 AI 教练获取方案后，程序先检查字段与参数范围，用户核对并确认，再由固定引擎计算收益、回撤与费用。保存的记录绑定配置、数据快照与引擎版本，可重新打开、对照并写入复盘笔记。课程模拟使用虚拟资金。</p>
-<h3 id="11-月-19-日双记录复盘">11 月 19 日双记录复盘</h3>
-<p>记录 A 使用自定义比例，记录 B 均分持仓。引擎重算得到两组方向相反的比较结果。</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>最大回撤的计算期间</th>
-<th style="text-align: right;">A · 自定义比例</th>
-<th style="text-align: right;">B · 均分持仓</th>
-<th>回撤较低的一条记录</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全期</td>
-<td style="text-align: right;">48.87%</td>
-<td style="text-align: right;">48.49%</td>
-<td>B</td>
-</tr>
-<tr>
-<td>留出期</td>
-<td style="text-align: right;">17.86%</td>
-<td style="text-align: right;">20.10%</td>
-<td>A</td>
-</tr>
-</tbody>
-</table>
-</div><p>AI 依据留出期数据写出“A 回撤略低”，页面上方却只有全期最大回撤。读者在表里会看到相反的排序。我据此提出将全期与留出期并列展示，让每句比较都能对上表里的记录和期间。</p>
-<figure><img src="../assets/quantlab-dual-record-review-20261119.jpg" alt="正式站双记录复盘"><figcaption>正式站双记录复盘</figcaption></figure>
-<figure><img src="../assets/quantlab-saved-result-20261117.jpg" alt="QuantLab 正式站已保存回测快照"><figcaption>QuantLab 正式站已保存回测快照</figcaption></figure>
-<p>6 只 ETF 有 1,416 个共同交易日（含 2020 年预热期），本次回测覆盖 1,211 个交易日。买卖各按成交额收取 5 bps，图中为当前策略与 4 条基准曲线。可从快照直接进入 AI 教练复盘。</p>
-<h3 id="10-位组外试用者提出了哪些问题">10 位组外试用者提出了哪些问题</h3>
-<p>11 月 14 至 16 日，团队汇总了 10 位组外试用者的匿名反馈，由组长确认反馈主题。下表列出据此已落地的改动。逐人任务完成率和改动后的复测数据尚未收齐。</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>环节</th>
-<th>试用中遇到的问题</th>
-<th>已落地的改动</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>首次体验</td>
-<td>首次使用就要设定 ETF、日期、策略和费率，用户希望注册前先试</td>
-<td>增加预设引导练习，开放免登录的等权与自定义比例对比示例</td>
-</tr>
-<tr>
-<td>行情进入练习</td>
-<td>行情页选好的 ETF 和区间在切页后被重置</td>
-<td>把已选标的和日期区间一起带入模拟练习</td>
-</tr>
-<tr>
-<td>保存与管理</td>
-<td>保存需要滚回设置区，旧示例也缺少删除入口</td>
-<td>将保存与复盘笔记移到结果旁，删除记录时二次确认</td>
-</tr>
-<tr>
-<td>AI 教练与仓位</td>
-<td>单一示例问题难以引导下一步，有人希望留下部分现金</td>
-<td>增加快捷提问，分开策划和复盘；支持权重合计不超过 100%，余款留作虚拟现金</td>
-</tr>
-</tbody>
-</table>
-</div><h2 id="appliedai-platform--servetrace--企业知识问答与调用治理">AppliedAI Platform &amp; ServeTrace ｜ 企业知识问答与调用治理</h2>
-<p>个人原型。知识问答同时受两项条件约束：文档能回答问题，提问者也有权查看文档。AppliedAI 负责资料权限、引用和工具调用，ServeTrace 负责模型调用的鉴权、限流与请求排查。</p>
-<h3 id="把资料权限放在哪一步">把资料权限放在哪一步</h3>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>方案</th>
-<th>受限资料何时可见</th>
-<th>取舍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>提示词保密</td>
-<td>受限片段已进入模型上下文，依靠指令约束回答</td>
-<td>权限控制依赖模型遵循指令</td>
-</tr>
-<tr>
-<td>回答生成后过滤</td>
-<td>受限片段已参与生成，再在输出中找关键词</td>
-<td>改写可能漏检，适合作为补充检查</td>
-</tr>
-<tr>
-<td>检索层前置 ACL</td>
-<td>按当前身份的权限限定可检索的资料，受限片段不进入上下文</td>
-<td>采用此方案，同时处理文档标签与用户撤权后的历史记录</td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="权限测试与工具调用">权限测试与工具调用</h3>
-<p>在 5 篇演示文档上，分别对 FTS5 与 Chroma 运行同题双身份测试，再用公开题检查是否把访客全部误拦。</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>每条检索路径的检查</th>
-<th>结果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>未授权身份查询受限资料</td>
-<td>0/9 组取到受限内容</td>
-</tr>
-<tr>
-<td>授权身份查询同一资料</td>
-<td>9/9 组取到受限内容</td>
-</tr>
-<tr>
-<td>公开题对照（1 道公开题 × 双身份各 1 次）</td>
-<td>2/2 次通过</td>
-</tr>
-</tbody>
-</table>
-</div><p>这个样本覆盖访问规则，大规模文档库的语义召回仍需单独评测。本地 Qwen3.5-27B 与 BGE 跑通了带引用的问答、无依据时显式拒答和访客隔离。撤权后，历史回答中受限内容脱敏，并从后续问答上下文移出。真实模型调用异常时显式返回失败。工具注册表校验调用参数，区分执行失败、超时和未知工具。固定模拟用例中路由匹配 10/10，覆盖了三类异常；真实模型的多步工具调用仍待评测。</p>
-<figure><img src="../assets/appliedai-gateway-cited-answer.png" alt="AppliedAI 通过 ServeTrace 调用本地模型，展示引用来源卡片与请求编号"><figcaption>AppliedAI 通过 ServeTrace 调用本地模型，展示引用来源卡片与请求编号</figcaption></figure>
-<h3 id="用请求编号定位调用问题">用请求编号定位调用问题</h3>
-<p>Key 创建时仅展示一次，列表显示掩码。停用的 Key 返回 403，删除后再次使用返回 401。按 Key 限流时返回 429，并用 Retry-After 告知调用方何时重试。Redis 和内存均可作为限流后端。本次 AppliedAI 联调采用非流式请求；早期网关版本拒绝 stream=true（HTTP 400），2026-11-09 源仓版本已支持 SSE，真实上游 SSE 待复测。</p>
-<p>同一请求通过 X-Request-Id 关联日志，区分整次问答耗时与网关往返耗时。控制台支持按时间、调用者、结果与编号查找请求，默认不记录完整提示词。</p>
-<figure><img src="../assets/servetrace-logs.png" alt="ServeTrace 控制台中的成功请求和限流记录"><figcaption>ServeTrace 控制台中的成功请求和限流记录</figcaption></figure>
-<h2 id="classnote-ai--本地优先的双语课堂工作台">ClassNote AI ｜ 本地优先的双语课堂工作台</h2>
-<p>个人 macOS 项目，面向英语授课环境。听课时，学生需要在录音、英文课件、翻译和笔记之间切换。把采集、转写翻译和课后检索放在本机，能让课堂记录少依赖教室网络；代价是学生要在自己的电脑上安装、加载合适的模型。</p>
-<h3 id="录音在继续字幕为什么是空的">录音在继续，字幕为什么是空的</h3>
-<p>一次课堂自用中，所选转写模型缺失，录音仍在继续，字幕却始终空白。界面也没有告诉我声音是否已保存。此后将录音保存、转写与翻译分别显示状态。开课前先检查模型能否加载；缺少依赖时，可改选可用模型或先录后转。</p>
-<figure><img src="../assets/classnote-model-manager.jpg" alt="ClassNote AI 模型实验室"><figcaption>ClassNote AI 模型实验室</figcaption></figure>
-<p>模型实验室列出 faster-whisper 的 tiny、base、small、medium 与 large-v3 档位，默认推荐 base。界面说明不同档位的速度、内存与准确率取舍，也区分“已安装”和“已验证可加载”。课堂内容默认在本机处理。</p>
-<h3 id="从一次课堂记录延伸到课后复习">从一次课堂记录延伸到课后复习</h3>
-<p>结合自用与同学试用反馈，调整竖版 PDF 课件的阅读和翻页体验，并优化资料检索导航。已交付可安装 macOS 版本并验证重新打开课程；历史故障续录恢复找回约 76.8 分钟有效录音。专业术语识别误差及连续使用情况仍待单独测量。</p>
-<h2 id="数据分析与-sql--银行外呼预算与-film-db">数据分析与 SQL ｜ 银行外呼预算与 Film DB</h2>
-<h3 id="银行营销外呼阈值和人力预算怎样改变选择">银行营销外呼：阈值和人力预算怎样改变选择</h3>
-<p>UCI Bank Marketing 含 45,211 条样本。外呼前还不知道通话时长，因此剔除 duration，使用训练集拟合 PySpark 预处理和逻辑回归，在 8,907 条独立测试样本上评估。</p>
-<p>把阈值从 0.50 降到 0.20，会多选 677 个外呼对象，其中 268 个是历史正例，409 个是误报，新增名单的历史命中率为 39.6%。</p>
-<figure><img src="../assets/threshold_tradeoff.png" alt="银行外呼测试集中的阈值、正例命中与误报"><figcaption>银行外呼测试集中的阈值、正例命中与误报</figcaption></figure>
-<p><strong>净收益敏感性。</strong> 以“命中历史正例数 × 假设单客价值 − 入选名单人数 × 假设单次外呼成本”估算净值。当单客价值固定为 200，阈值选择会随单次联系成本改变。</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>假设单次成本 / 单客价值</th>
-<th style="text-align: right;">阈值 0.20 净值</th>
-<th style="text-align: right;">阈值 0.50 净值</th>
-<th style="text-align: right;">两者中净值较高的阈值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>20 / 200</td>
-<td style="text-align: right;">74,480</td>
-<td style="text-align: right;">34,420</td>
-<td style="text-align: right;">0.20</td>
-</tr>
-<tr>
-<td>50 / 200</td>
-<td style="text-align: right;">45,500</td>
-<td style="text-align: right;">25,750</td>
-<td style="text-align: right;">0.20</td>
-</tr>
-<tr>
-<td>100 / 200</td>
-<td style="text-align: right;">−2,800</td>
-<td style="text-align: right;">11,300</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-</tbody>
-</table>
-</div><p><strong>固定外呼预算。</strong> 如果只够联系 K 人，就按模型评分从高到低取前 K 个候选人。扩大名单能覆盖更多历史正例，也会摊薄命中率。</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>外呼名额</th>
-<th style="text-align: right;">名单内历史正例</th>
-<th style="text-align: right;">历史命中率</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Top 100</td>
-<td style="text-align: right;">81</td>
-<td style="text-align: right;">81.0%</td>
-</tr>
-<tr>
-<td>Top 200</td>
-<td style="text-align: right;">148</td>
-<td style="text-align: right;">74.0%</td>
-</tr>
-<tr>
-<td>Top 500</td>
-<td style="text-align: right;">296</td>
-<td style="text-align: right;">59.2%</td>
-</tr>
-<tr>
-<td>Top 966（对应阈值 0.20）</td>
-<td style="text-align: right;">469</td>
-<td style="text-align: right;">48.6%</td>
-</tr>
-</tbody>
-</table>
-</div><p>成本与单客价值为假设参数。历史标签衡量名单命中情况，要估计外呼带来的增量转化，还需对照实验。</p>
-<h3 id="film-database-system清洗异常隔离与统计分母">Film Database System：清洗、异常隔离与统计分母</h3>
-<p>4 张归档源表共有 38,105 行。暂存导入后校验类型、混合日期和外键，38,006 行进入正式表，99 行按原因隔离。修复了 UNION ALL 跨表类型冲突和 ISO / Excel 混合日期解析问题，恢复 83 个出生年与 1 个死亡年，形成 12 条分析 SQL 和 4 张视图。</p>
-<div class="table-wrap"><table>
-<thead>
-<tr>
-<th>正式表</th>
-<th style="text-align: right;">入库行数</th>
-<th style="text-align: right;">隔离行数</th>
-<th>对分析口径的影响</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>films（电影）</td>
-<td style="text-align: right;">4,949</td>
-<td style="text-align: right;">0</td>
-<td>952 部电影有评分，覆盖率为 952 / 4,949，即 19.2%；一部电影可以有多条评分</td>
-</tr>
-<tr>
-<td>people（人物）</td>
-<td style="text-align: right;">8,397</td>
-<td style="text-align: right;">0</td>
-<td>修复混合日期解析后，有效出生年由 6,069 增至 6,152</td>
-</tr>
-<tr>
-<td>roles（角色关联）</td>
-<td style="text-align: right;">19,715</td>
-<td style="text-align: right;">76</td>
-<td>隔离引用不存在影片的孤儿记录，人物关联统计包含导演等不同角色</td>
-</tr>
-<tr>
-<td>reviews（评分）</td>
-<td style="text-align: right;">4,945</td>
-<td style="text-align: right;">23</td>
-<td>隔离缺影片 ID 的 19 行及外键无效的 4 行；源表缺少 genre 与 review_date，限制了分类型和时间趋势分析</td>
-</tr>
-</tbody>
-</table>
-</div></main>
+
+<!-- PAGE 1: QuantLab -->
+<div class="page">
+  <div class="p-header">
+    <div class="p-kicker">Case 01 · AI Workflow, Metric Alignment & User Iteration</div>
+    <div class="p-title">QuantLab AI 投教与历史模拟平台</div>
+    <div class="p-sub">7 人课程团队（ENT207） · 负责回测与 AI 教练产品迭代 · 2026.10 至今 · 已上线 Softr 正式站</div>
+  </div>
+
+  <div class="lead">
+    <strong>核心产品问题：</strong>投资新手直接问大模型“怎么配 ETF、收益多少”，会同时踩中两个 AI 产品坑——模型会编造历史收益与费用，且对话建议停留在文字层无法直接验证。QuantLab 将<strong>大模型策划解读</strong>与<strong>确定性回测引擎</strong>解耦，并用真实组外试用反馈持续迭代上手路径。
+  </div>
+
+  <div class="flow">
+    <div class="flow-step">1. AI 生成方案<br><span style="font-weight:400;color:#475569;">DeepSeek 双模型</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">2. 程序参数校验<br><span style="font-weight:400;color:#475569;">字段与范围检查</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">3. 用户显式确认<br><span style="font-weight:400;color:#475569;">载入并核对计划</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">4. 固定引擎计算<br><span style="font-weight:400;color:#475569;">收益 / 回撤 / 费用</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">5. 双记录对照复盘<br><span style="font-weight:400;color:#475569;">引擎指标 + AI 解读</span></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="fig fig-h-fixed">
+      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E4%B8%89/ENT207/ENTchatgpt/.work/coach-multireview-1119/%E6%AD%A3%E5%BC%8F%E7%AB%99%E5%8F%8C%E8%AE%B0%E5%BD%95%E5%A4%8D%E7%9B%98.jpg" alt="QuantLab 11月19日正式站双记录对比与AI解读">
+      <div class="fig-cap">正式站双记录复盘（2026-11-19）：并列呈现固定引擎指标表（记录 A 自定义比例 vs 记录 B 均分持仓）与 AI 复盘解读，支持按选定记录核对结论。</div>
+    </div>
+    <div class="fig fig-h-fixed">
+      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261117_%E5%A4%8D%E5%AE%A1%E4%BF%AE%E5%A4%8D/%E5%88%B6%E4%BD%9C/%E6%88%AA%E5%9B%BE/quantlab-saved-result-20261117.jpg" alt="QuantLab 正式站历史模拟结果快照">
+      <div class="fig-cap">6 只 ETF 有 1,416 个共同交易日（含 2020 年预热期），本次回测覆盖 1,211 个交易日。买卖各按成交额收取 5 bps，图中为当前策略与 4 条基准曲线。可从快照直接进入 AI 教练复盘。</div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">复盘口径错位洞察 → 信息架构改进</div>
+      <p>双记录复盘实测中，AI 解读先注明留出期再评“回撤记录 A 略低”，但顶部对照表仅展示全期最大回撤（A 48.87% &gt; B 48.49%）。核对引擎重算确认：<strong>全期回撤 B 更低，留出期回撤 A 17.86% &lt; B 20.10%</strong>——两段排名相反且顶表缺留出期回撤行，据此推动按全期/留出期并列展示，消除核对歧义。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">人机信任边界与同口径版本追溯</div>
+      <p>收益曲线、最大回撤、累计费用与 2025 年留出收益全部由固定引擎计算，不交由模型自由生成；同时绑定配置、数据快照与引擎版本，支持保存、重开与笔记写回，避免多轮实验口径漂移（模拟采用虚拟资金，仅作课程投教）。</p>
+    </div>
+  </div>
+
+  <h3>10 位组外用户试用反馈 → 产品改动（团队确认匿名反馈汇总，2026-11-14 至 11-16）</h3>
+  <table>
+    <thead>
+      <tr><th style="width:18%;">关键环节</th><th style="width:40%;">组外试用暴露的真实痛点</th><th style="width:42%;">落地的产品改动</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>首次上手与登录</strong></td><td>首访面对 ETF、日期、策略与费率门槛过高；访客希望注册前先体验</td><td>新增预设引导练习与免登录对比示例（等权 vs 自定义比例同口径对照）</td></tr>
+      <tr><td><strong>行情 → 练习衔接</strong></td><td>在行情页选好的 ETF 与区间切入练习页后被重置，需重复操作</td><td>打通行情页状态透传，自动将所选标的与日期区间带入模拟练习</td></tr>
+      <tr><td><strong>保存与记录管理</strong></td><td>保存结果需滚回设置区；缺少删除旧示例记录的入口</td><td>将保存与复盘笔记控件移至回测结果旁；新增带二次确认的删除记录功能</td></tr>
+      <tr><td><strong>AI 教练与仓位</strong></td><td>单一示例问题引导不足；试用者希望保留部分虚拟现金而非强制满仓</td><td>新增快捷提问并拆清策划/复盘界面；支持自定义权重合计 ≤100%，余款留存现金</td></tr>
+    </tbody>
+  </table>
+  <div class="note">注：以上 4 类问题来自团队汇总的 10 位组外试用者匿名反馈，均已转化为对应功能改动上线。</div>
+
+  <div class="footer">
+    <span>魏宇 · AI 产品与数据分析作品集</span>
+    <span><a href="https://github.com/suiyisuixing/ai-product-portfolio">github.com/suiyisuixing/ai-product-portfolio</a> · 第 1 页 / 共 4 页</span>
+  </div>
+</div>
+
+<!-- PAGE 2: ClassNote AI -->
+<div class="page">
+  <div class="p-header">
+    <div class="p-kicker">Case 02 · Local-First AI Productivity & Degradation UX</div>
+    <div class="p-title">ClassNote AI 本地优先双语课堂工作台</div>
+    <div class="p-sub">个人项目 · 面向英语授课大学生的 macOS 桌面应用 · 2026.05 至今</div>
+  </div>
+
+  <div class="lead">
+    <strong>核心产品问题：</strong>英语授课课堂同时面临网络波动、专业术语密集以及“录音器 + PDF 课件 + 翻译 + 笔记”多窗口切换割裂的问题。ClassNote AI 选择<strong>本地优先架构</strong>，将课堂采集、本地转写翻译与课后知识查找整合到单一工作台，并重点解决本地 AI 模块失效时的用户信任问题。
+  </div>
+
+  <div class="fig" style="margin-bottom:7.5pt;">
+    <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261117_%E5%A4%8D%E5%AE%A1%E4%BF%AE%E5%A4%8D/%E5%85%AC%E5%BC%80%E4%BD%9C%E5%93%81%E9%9B%86%E5%BE%85%E5%90%8C%E6%AD%A5/assets/classnote-model-manager.jpg" alt="ClassNote AI 模型实验室界面" style="max-height:76mm;object-fit:contain;background:#FAFAFA;">
+    <div class="fig-cap">ClassNote AI 模型实验室界面：将 faster-whisper 本地模型分档（tiny / base 默认推荐 / small / medium / large-v3），用非技术语言向学生说明速度、内存与准确率取舍，显式提示“已安装，待加载验证”与“本机处理、不上传课堂内容”。</div>
+  </div>
+
+  <h3>产品方案对比：为什么做“本地优先”而不是又一个云端 AI 笔记</h3>
+  <table>
+    <thead>
+      <tr><th style="width:24%;">方案形态</th><th style="width:16%;">弱网 / 离线可用</th><th style="width:16%;">课堂隐私控制</th><th style="width:22%;">核心体验短板</th><th style="width:22%;">产品定位取舍</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>云端协作 AI 笔记（如通用会议工具）</td><td>弱（强依赖上云）</td><td>内容默认上云</td><td>教室弱网易断流；通用会议模板不贴合竖版课件+双语复习</td><td>不与之正面拼云协作</td></tr>
+      <tr><td>本地文件夹 + 系统搜索</td><td>强</td><td>强</td><td>音频、课件与笔记割裂，无法跨资料检索术语</td><td>仅作基线对比</td></tr>
+      <tr><td><strong>本地优先工作台（ClassNote）</strong></td><td><strong>强（本机闭环）</strong></td><td><strong>强（默认不上云）</strong></td><td>端侧算力受限，需显式管理模型体积与故障降级</td><td><strong>采纳：切入英语课堂垂直刚需</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">关键设计：AI 失效与核心资产保存彻底解耦</div>
+      <p>课堂自用曾发生“录音继续但字幕全空”故障（所选本地模型缺失，界面却未提示音频是否在保存）。据此确立<strong>先保全内容、再处理转写依赖</strong>原则：新增模型加载预检、改选可用模型与<strong>先录后转</strong>降级入口，将音频保存、转写与翻译拆成三组独立状态提示。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">试用反馈收敛与版本交付</div>
+      <p>结合自用与同学试用反馈，重点迭代竖版 PDF 课件阅读、翻页流畅度与知识库导航，沉淀 PRD、竞品对比及异常流程清单。已交付可安装 macOS 版本并完成课程重开验证；历史故障续录恢复找回约 76.8 分钟有效录音。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>魏宇 · AI 产品与数据分析作品集</span>
+    <span><a href="https://github.com/suiyisuixing/ai-product-portfolio">github.com/suiyisuixing/ai-product-portfolio</a> · 第 2 页 / 共 4 页</span>
+  </div>
+</div>
+
+<!-- PAGE 3: AppliedAI Platform & ServeTrace -->
+<div class="page">
+  <div class="p-header">
+    <div class="p-kicker">Case 03 · Enterprise RAG ACL & LLM Gateway Governance</div>
+    <div class="p-title">AppliedAI Platform & ServeTrace：企业权限检索与调用治理</div>
+    <div class="p-sub">个人 AI 产品原型 · 检索层权限设计、工具契约与大模型网关治理 · 2026.11</div>
+  </div>
+
+  <div class="lead">
+    <strong>核心产品判断：</strong>企业内部知识问答里，“召回相关”不等于“有权查看”。一旦受限片段进入 Prompt 上下文，提示词保密与生成后过滤均存在绕过风险。本套原型将<strong>检索前 ACL 隔离</strong>（AppliedAI）与<strong>统一调用治理</strong>（ServeTrace）打通，把安全与稳定性规则转化为可复现的产品行为。
+  </div>
+
+  <div class="grid-2">
+    <div class="fig fig-h-fixed">
+      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261117_%E5%A4%8D%E5%AE%A1%E4%BF%AE%E5%A4%8D/%E5%85%AC%E5%BC%80%E4%BD%9C%E5%93%81%E9%9B%86%E5%BE%85%E5%90%8C%E6%AD%A5/assets/appliedai-gateway-cited-answer.png" alt="AppliedAI 经 ServeTrace 网关调用本地真实模型与引用溯源">
+      <div class="fig-cap">AppliedAI 经 ServeTrace 联通本地开源大模型：展示引用编号与来源卡片、网关请求 ID，明确区分端到端问答耗时与网关往返耗时。</div>
+    </div>
+    <div class="fig fig-h-fixed">
+      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261117_%E5%A4%8D%E5%AE%A1%E4%BF%AE%E5%A4%8D/%E5%85%AC%E5%BC%80%E4%BD%9C%E5%93%81%E9%9B%86%E5%BE%85%E5%90%8C%E6%AD%A5/assets/servetrace-logs.png" alt="ServeTrace 调用控制台请求记录与限流状态">
+      <div class="fig-cap">ServeTrace 调用控制台：支持按时间、调用者、结果（success / rate_limited）与请求编号组合排查，且默认不保存完整提示词以保护隐私。</div>
+    </div>
+  </div>
+
+  <h3>方案对比：为什么选择检索层前置 ACL</h3>
+  <table>
+    <thead>
+      <tr><th style="width:23%;">方案</th><th style="width:21%;">受限内容是否进上下文</th><th style="width:29%;">典型失效模式</th><th style="width:27%;">产品取舍结论</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>提示词保密</td><td>是（已检索入 Prompt）</td><td>模型受引导或间接注入直接泄露原文</td><td>不可作为主防线</td></tr>
+      <tr><td>生成后关键词过滤</td><td>是（已参与推理）</td><td>同义改写绕过；额外增加推理时延</td><td>仅适合作为纵深辅助层</td></tr>
+      <tr><td><strong>检索层前置 ACL</strong></td><td><strong>否（检索即按密级滤除）</strong></td><td>依赖文档标签准确性与撤权同步机制</td><td><strong>采纳：边界清晰且可对照验收</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>权限对照验收、安全收口与网关治理规则</h3>
+  <table>
+    <thead>
+      <tr><th style="width:22%;">治理模块</th><th style="width:44%;">产品规则与交互设计</th><th style="width:34%;">已验证行为与适用边界</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>前置 ACL 正反对照</strong></td><td>构建“同题双身份（未授权 vs 授权）+ 公开题基线”对照用例，同步校验越权拦截与合法召回</td><td>5 篇分密级演示文档下双检索路径均通过 9 组对照（未授权 0/9、授权 9/9、公开 2/2），验证检索层隔离规则生效</td></tr>
+      <tr><td><strong>真实模型端到端收口</strong></td><td>本地接入 Qwen3.5-27B + BGE 中文嵌入：带引用点击查看原文、无依据问题显式拒答、权限撤销后历史脱敏且移出上下文、禁止静默回退模拟回答</td><td>已跑通登录、资料库分权、访客隔离、引用溯源、多轮追问与重启恢复全流程走查</td></tr>
+      <tr><td><strong>工具调用契约</strong></td><td>定义工具白名单、调用参数校验及执行失败 / 超时 / 未知工具三类结构化错误兜底</td><td>10 组固定路由用例与三类异常分支全部通过；真实模型多步自主规划列为后续迭代项</td></tr>
+      <tr><td><strong>ServeTrace 网关治理</strong></td><td>凭证生命周期（创建仅显一次明文、掩码列表、停用与删除分级拦截）、单 Key 滑动窗口限流与重试引导、请求 ID 贯穿日志</td><td>支持 Redis / Memory 双限流后端与非流式稳定转发，默认脱敏不落盘完整 Prompt</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>魏宇 · AI 产品与数据分析作品集</span>
+    <span><a href="https://github.com/suiyisuixing/ai-product-portfolio">github.com/suiyisuixing/ai-product-portfolio</a> · 第 3 页 / 共 4 页</span>
+  </div>
+</div>
+
+<!-- PAGE 4: Data Analysis & SQL -->
+<div class="page">
+  <div class="p-header">
+    <div class="p-kicker">Case 04 · Business Decision Analytics & SQL Data Governance</div>
+    <div class="p-title">数据分析实践：外呼阈值净收益比较与 PostgreSQL 清洗治理</div>
+    <div class="p-sub">课程与业务扩展项目 · PySpark 分类决策分析 & PostgreSQL 关系建模核验</div>
+  </div>
+
+  <h3 style="margin-top:0;">一、银行营销外呼筛选：从模型阈值到成本收益与固定预算排序</h3>
+  <p class="body">基于 UCI Bank Marketing（45,211 条样本），针对“外呼前候选人筛选”剔除通话后才获知的特征泄漏字段 <code>duration</code>，训练集拟合 PySpark 预处理与逻辑回归并在 8,907 条独立测试集核验，进一步将混淆矩阵转化为<strong>外呼成本收益矩阵</strong>与<strong>固定人力预算 Top-K 排序</strong>。</p>
+
+  <div class="grid-2" style="align-items:center;">
+    <div class="fig">
+      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261110_%E6%B1%82%E8%81%8C%E5%AE%9E%E6%B5%8B/bank_marketing/threshold_tradeoff.png" alt="不同阈值下的 TP 与 FP 变化曲线" style="max-height:46mm;object-fit:contain;">
+      <div class="fig-cap">测试集（n=8,907）阈值扫描：从 0.50 降至 0.20 新增 677 个外呼目标，其中 268 正例、409 误报（边际命中率 39.6%）。</div>
+    </div>
+    <div>
+      <table style="margin-top:0;margin-bottom:5pt;">
+        <thead>
+          <tr><th>外呼预算 Top-K</th><th>历史正例</th><th>历史命中率</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Top 100</td><td>81</td><td><strong>81.0%</strong></td></tr>
+          <tr><td>Top 200</td><td>148</td><td><strong>74.0%</strong></td></tr>
+          <tr><td>Top 500</td><td>296</td><td><strong>59.2%</strong></td></tr>
+          <tr><td>Top 966（阈值 0.20）</td><td>469</td><td>48.6%</td></tr>
+        </tbody>
+      </table>
+      <table style="margin-top:0;margin-bottom:0;">
+        <thead>
+          <tr><th>假设成本 / 价值</th><th>0.20 净值</th><th>0.50 净值</th><th>推荐策略</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>20 / 200</td><td>74,480</td><td>34,420</td><td>选 0.20</td></tr>
+          <tr><td>50 / 200</td><td>45,500</td><td>25,750</td><td>选 0.20</td></tr>
+          <tr><td><strong>100 / 200</strong></td><td><strong>-2,800</strong></td><td><strong>11,300</strong></td><td><strong>切回 0.50</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="note" style="margin-bottom:7pt;">口径说明：成本与单客价值为决策敏感性假设参数；历史观测正例命中不等同于外呼带来的因果增量转化，真实上线需以 A/B 对照实验验证。</div>
+
+  <h3>二、Film Database System：PostgreSQL 关系建模、异常隔离与分母口径治理</h3>
+  <p class="body">对 4 张归档源表（38,105 行）完成暂存导入、类型与日期清洗及外键校验：正式入库 38,006 行，按原因隔离 99 条无效关联（76 条孤儿角色、23 条无效评分）；修复 <code>UNION ALL</code> 跨表类型冲突及 ISO / Excel 混合日期解析缺陷，恢复 83 个出生年与 1 个死亡年，并沉淀 12 条分析 SQL 与 4 张视图。</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:18%;">正式数据表</th><th style="width:16%;">入库行数</th><th style="width:18%;">隔离异常行数</th><th style="width:48%;">关键数据质量与指标口径治理结论</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>films（电影）</td><td>4,949</td><td>0</td><td>仅 952 部有评分记录（19.2%），分析评分覆盖时严禁将 4,945 条评分行数误作电影分母</td></tr>
+      <tr><td>people（人物）</td><td>8,397</td><td>0</td><td>兼容 ISO 与 Excel 序列日期后，有效出生年由 6,069 恢复至 6,152，消除 83 条误置空</td></tr>
+      <tr><td>roles（角色关联）</td><td>19,715</td><td>76</td><td>隔离引用不存在影片 ID 的孤儿记录；明确人物关联统计包含导演等全角色口径</td></tr>
+      <tr><td>reviews（评分）</td><td>4,945</td><td>23</td><td>隔离缺影片 ID（19）与无效外键（4）；明确源表缺失 genre/review_date 字段，不输出伪结论</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>魏宇 · AI 产品与数据分析作品集</span>
+    <span><a href="https://github.com/suiyisuixing/ai-product-portfolio">github.com/suiyisuixing/ai-product-portfolio</a> · 第 4 页 / 共 4 页</span>
+  </div>
+</div>
+
 </body>
 </html>

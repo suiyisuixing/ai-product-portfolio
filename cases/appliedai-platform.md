@@ -28,8 +28,8 @@
 
 AppliedAI 通过 ServeTrace 调用本地模型。创建 Key 时完整值只展示一次，列表保留掩码。停用后调用返回 `403`，删除后返回 `401`。超过单 Key 配额时，网关返回 `429` 和 `Retry-After`，调用方可据此安排重试。
 
-每次调用返回 `X-Request-Id`，可据此在日志中查到成功或限流记录。问答端耗时（`ask_elapsed_ms`）覆盖检索、权限检查与网关/模型调用并在最终权限复核与落库前采样，网关往返耗时（`llm_http_ms`）覆盖上游模型调用，网关日志 `latency_ms` 统计网关侧耗时，分别对应不同的等待环节。日志默认不保存完整提示词。本次 AppliedAI 联调采用非流式调用；早期网关版本明确拒绝 `stream=true`（HTTP 400 `stream_not_supported`），2026-11-09 源仓版本已支持 SSE 流式响应，真实本地模型上游的 SSE 尚未复测。
+每次调用返回 `X-Request-Id`，可据此在日志中查到成功或限流记录。问答端耗时（`ask_elapsed_ms`）覆盖检索、权限检查与网关/模型调用，网关往返耗时（`llm_http_ms`）覆盖上游调用，网关日志 `latency_ms` 统计网关侧处理与转发耗时，便于快速定位慢请求瓶颈。日志默认不保存完整提示词以保护隐私。
 
 ![ServeTrace 请求记录列表，显示调用者、结果与请求编号](../assets/servetrace-logs.png)
 
-[下一案例 · ClassNote AI](classnote-ai.md) · [返回目录](README.md)
+[下一案例 · 数据分析与 SQL](data-analysis.md) · [返回目录](README.md)
