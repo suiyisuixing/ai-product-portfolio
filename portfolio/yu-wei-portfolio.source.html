@@ -14,21 +14,22 @@
     padding: 0;
   }
   body {
-    font-family: "Helvetica Neue", "STHeiti", sans-serif;
-    font-weight: 300;
-    color: #1A202C;
-    font-size: 9.1pt;
-    line-height: 1.46;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-weight: 400;
+    color: #1E293B;
+    font-size: 9.0pt;
+    line-height: 1.44;
     width: 210mm;
+    font-variant-ligatures: none;
+    -webkit-font-smoothing: antialiased;
   }
   .page {
     page-break-after: always;
     width: 210mm;
-    height: 297mm;
-    padding: 13mm 15mm 12mm 15mm;
+    min-height: 297mm;
+    padding: 11.5mm 14.5mm 10.5mm 14.5mm;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
   }
   .page:last-child {
     page-break-after: auto;
@@ -63,7 +64,7 @@
     border-left: 3pt solid #1E3A5F;
     padding: 5pt 8pt;
     margin-bottom: 7pt;
-    text-align: justify;
+    text-align: left;
   }
   .grid-2 {
     display: grid;
@@ -106,7 +107,7 @@
   }
   p.body {
     margin-bottom: 4.5pt;
-    text-align: justify;
+    text-align: left;
   }
   .cards {
     display: grid;
@@ -130,7 +131,7 @@
     font-size: 8.4pt;
     color: #334155;
     line-height: 1.44;
-    text-align: justify;
+    text-align: left;
   }
   table {
     width: 100%;
@@ -217,9 +218,10 @@
 <!-- PAGE 1: QuantLab -->
 <div class="page">
   <div class="p-header">
+    <div style="display:flex;justify-content:space-between;font-size:8.4pt;color:#1E3A5F;font-weight:600;background:#EFF6FF;padding:3.5pt 7pt;border-radius:3pt;margin-bottom:5pt;border-left:2.5pt solid #1D4ED8;"><span>魏宇 · 西交利物浦大学（专业前 10%） · 上海线下全勤（1 周内到岗）</span><span>18952571662 · 2782726662@qq.com</span></div>
     <div class="p-kicker">Case 01 · AI Workflow, Metric Alignment & User Iteration</div>
     <div class="p-title">QuantLab AI 投教与历史模拟平台</div>
-    <div class="p-sub">7 人课程团队（ENT207） · 负责回测与 AI 教练产品迭代 · 2026.10 至今 · 已上线 Softr 正式站</div>
+    <div class="p-sub">7 人课程团队（ENT207） · 负责回测与 AI 教练产品迭代 · 2026.09 至今 · 已上线 Softr 正式站</div>
   </div>
 
   <div class="lead">
@@ -240,23 +242,23 @@
 
   <div class="grid-2">
     <div class="fig fig-h-fixed">
-      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E5%A4%A7%E4%B8%89/ENT207/ENTchatgpt/.work/coach-multireview-1119/%E6%AD%A3%E5%BC%8F%E7%AB%99%E5%8F%8C%E8%AE%B0%E5%BD%95%E5%A4%8D%E7%9B%98.jpg" alt="QuantLab 11月19日正式站双记录对比与AI解读">
+      <img src="../assets/quantlab-dual-record-review-20261119.jpg" alt="QuantLab 11月19日正式站双记录对比与AI解读">
       <div class="fig-cap">正式站双记录复盘（2026-11-19）：并列呈现固定引擎指标表（记录 A 自定义比例 vs 记录 B 均分持仓）与 AI 复盘解读，支持按选定记录核对结论。</div>
     </div>
     <div class="fig fig-h-fixed">
-      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261117_%E5%A4%8D%E5%AE%A1%E4%BF%AE%E5%A4%8D/%E5%88%B6%E4%BD%9C/%E6%88%AA%E5%9B%BE/quantlab-saved-result-20261117.jpg" alt="QuantLab 正式站历史模拟结果快照">
+      <img src="../assets/quantlab-saved-result-20261117.jpg" alt="QuantLab 正式站历史模拟结果快照">
       <div class="fig-cap">6 只 ETF 有 1,416 个共同交易日（含 2020 年预热期），本次回测覆盖 1,211 个交易日。买卖各按成交额收取 5 bps，图中为当前策略与 4 条基准曲线。可从快照直接进入 AI 教练复盘。</div>
     </div>
   </div>
 
   <div class="cards">
     <div class="card">
-      <div class="card-title">复盘口径错位洞察 → 信息架构改进</div>
-      <p>双记录复盘实测中，AI 解读先注明留出期再评“回撤记录 A 略低”，但顶部对照表仅展示全期最大回撤（A 48.87% &gt; B 48.49%）。核对引擎重算确认：<strong>全期回撤 B 更低，留出期回撤 A 17.86% &lt; B 20.10%</strong>——两段排名相反且顶表缺留出期回撤行，据此推动按全期/留出期并列展示，消除核对歧义。</p>
+      <div class="card-title">复盘口径错位洞察 → V2 迭代规格</div>
+      <p>双记录复盘实测中，AI 解读先注明留出期再评“回撤记录 A 略低”，但顶部对照表仅展示全期最大回撤（A 48.87% &gt; B 48.49%）。核对引擎重算确认：<strong>全期回撤 B 更低，2025 留出期回撤 A 17.86% &lt; B 20.10%</strong>——模型未算错，根因是顶表缺留出期行，据此提出双期间并列展示写入 V2 迭代规格。</p>
     </div>
     <div class="card">
-      <div class="card-title">人机信任边界与同口径版本追溯</div>
-      <p>收益曲线、最大回撤、累计费用与 2025 年留出收益全部由固定引擎计算，不交由模型自由生成；同时绑定配置、数据快照与引擎版本，支持保存、重开与笔记写回，避免多轮实验口径漂移（模拟采用虚拟资金，仅作课程投教）。</p>
+      <div class="card-title">人机信任边界与 60 题评测集设计</div>
+      <p>收益曲线、最大回撤与 5 bps 费用全由固定引擎计算；另按口语意图、参数边界、合规拒答等 6 类场景构建 <strong>60 题标准答案集与自动判分脚本</strong>（校验 JSON 结构、引擎数值溯源与全期/留出期归属，语义模糊题转人工复核），用于 Prompt 版本同题回归。</p>
     </div>
   </div>
 
@@ -285,15 +287,15 @@
   <div class="p-header">
     <div class="p-kicker">Case 02 · Local-First AI Productivity & Degradation UX</div>
     <div class="p-title">ClassNote AI 本地优先双语课堂工作台</div>
-    <div class="p-sub">个人项目 · 面向英语授课大学生的 macOS 桌面应用 · 2026.05 至今</div>
+    <div class="p-sub">个人项目 · 面向英语授课大学生的 macOS 桌面应用（另含 Windows 打包配置） · 2026.05 至今</div>
   </div>
 
   <div class="lead">
     <strong>核心产品问题：</strong>英语授课课堂同时面临网络波动、专业术语密集以及“录音器 + PDF 课件 + 翻译 + 笔记”多窗口切换割裂的问题。ClassNote AI 选择<strong>本地优先架构</strong>，将课堂采集、本地转写翻译与课后知识查找整合到单一工作台，并重点解决本地 AI 模块失效时的用户信任问题。
   </div>
 
-  <div class="fig" style="margin-bottom:7.5pt;">
-    <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261117_%E5%A4%8D%E5%AE%A1%E4%BF%AE%E5%A4%8D/%E5%85%AC%E5%BC%80%E4%BD%9C%E5%93%81%E9%9B%86%E5%BE%85%E5%90%8C%E6%AD%A5/assets/classnote-model-manager.jpg" alt="ClassNote AI 模型实验室界面" style="max-height:76mm;object-fit:contain;background:#FAFAFA;">
+  <div class="fig" style="margin-bottom:6.5pt;">
+    <img src="../assets/classnote-model-manager.jpg" alt="ClassNote AI 模型实验室界面" style="max-height:66mm;object-fit:contain;background:#FAFAFA;">
     <div class="fig-cap">ClassNote AI 模型实验室界面：将 faster-whisper 本地模型分档（tiny / base 默认推荐 / small / medium / large-v3），用非技术语言向学生说明速度、内存与准确率取舍，显式提示“已安装，待加载验证”与“本机处理、不上传课堂内容”。</div>
   </div>
 
@@ -315,10 +317,22 @@
       <p>课堂自用曾发生“录音继续但字幕全空”故障（所选本地模型缺失，界面却未提示音频是否在保存）。据此确立<strong>先保全内容、再处理转写依赖</strong>原则：新增模型加载预检、改选可用模型与<strong>先录后转</strong>降级入口，将音频保存、转写与翻译拆成三组独立状态提示。</p>
     </div>
     <div class="card">
-      <div class="card-title">试用反馈收敛与版本交付</div>
-      <p>结合自用与同学试用反馈，重点迭代竖版 PDF 课件阅读、翻页流畅度与知识库导航，沉淀 PRD、竞品对比及异常流程清单。已交付可安装 macOS 版本并完成课程重开验证；历史故障续录恢复找回约 76.8 分钟有效录音。</p>
+      <div class="card-title">试用反馈收敛与安装版交付</div>
+      <p>结合自用与同学试用反馈，重点迭代竖版 PDF 课件阅读、翻页流畅度与知识库导航，沉淀完整 PRD、竞品对比与用户排障 FAQ；已交付可安装 macOS 版本（DMG）完成课堂实测与课程重开验收，并编写 Windows 打包配置规格。</p>
     </div>
   </div>
+
+  <h3>核心异常降级、续录恢复与安装版验收（对应 PRD CN-006 ~ CN-009）</h3>
+  <table>
+    <thead>
+      <tr><th style="width:22%;">验收环节</th><th style="width:42%;">异常状态流转与降级规则</th><th style="width:36%;">实测结果与交付证据</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>开课前模型预检</strong></td><td>启动录音前检查本地 faster-whisper 模型文件与加载可用性</td><td>缺失模型时弹窗引导改选已装档位或一键进入“先录后转”</td></tr>
+      <tr><td><strong>三状态独立提示</strong></td><td>将本地音频分片保存、实时转写、双语翻译拆为独立状态栏指示</td><td>转写卡顿或报错不中断底层录音落盘，消除“无字幕=没录上”恐慌</td></tr>
+      <tr><td><strong>故障续录恢复</strong></td><td>按分片时间轴合并异常中断录音并去重补跑离线转写</td><td>历史课堂故障后找回约 <strong>76.8 分钟</strong>有效录音（461 分片、0 重复字幕）</td></tr>
+    </tbody>
+  </table>
 
   <div class="footer">
     <span>魏宇 · AI 产品与数据分析作品集</span>
@@ -329,23 +343,23 @@
 <!-- PAGE 3: AppliedAI Platform & ServeTrace -->
 <div class="page">
   <div class="p-header">
-    <div class="p-kicker">Case 03 · Enterprise RAG ACL & LLM Gateway Governance</div>
-    <div class="p-title">AppliedAI Platform & ServeTrace：企业权限检索与调用治理</div>
-    <div class="p-sub">个人 AI 产品原型 · 检索层权限设计、工具契约与大模型网关治理 · 2026.11</div>
+    <div class="p-kicker">Case 03 · Enterprise RAG ACL & LLM Gateway Telemetry</div>
+    <div class="p-title">AppliedAI & ServeTrace：企业知识库权限问答与大模型网关原型</div>
+    <div class="p-sub">个人 AI 产品原型 · 检索前权限过滤、工具调用契约与网关日志规则 · 2026.11</div>
   </div>
 
   <div class="lead">
-    <strong>核心产品判断：</strong>企业内部知识问答里，“召回相关”不等于“有权查看”。一旦受限片段进入 Prompt 上下文，提示词保密与生成后过滤均存在绕过风险。本套原型将<strong>检索前 ACL 隔离</strong>（AppliedAI）与<strong>统一调用治理</strong>（ServeTrace）打通，把安全与稳定性规则转化为可复现的产品行为。
+    <strong>核心产品判断：</strong>企业内部知识问答里，“召回相关”不等于“有权查看”。一旦受限片段进入 Prompt 上下文，提示词保密与生成后过滤均存在绕过风险。本套原型将<strong>检索前 ACL 隔离</strong>（AppliedAI）与<strong>统一转发网关</strong>（ServeTrace）打通，把权限与可观测规则转化为可复现的产品行为。
   </div>
 
   <div class="grid-2">
     <div class="fig fig-h-fixed">
-      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261117_%E5%A4%8D%E5%AE%A1%E4%BF%AE%E5%A4%8D/%E5%85%AC%E5%BC%80%E4%BD%9C%E5%93%81%E9%9B%86%E5%BE%85%E5%90%8C%E6%AD%A5/assets/appliedai-gateway-cited-answer.png" alt="AppliedAI 经 ServeTrace 网关调用本地真实模型与引用溯源">
-      <div class="fig-cap">AppliedAI 经 ServeTrace 联通本地开源大模型：展示引用编号与来源卡片、网关请求 ID，明确区分端到端问答耗时与网关往返耗时。</div>
+      <img src="../assets/appliedai-acl-guest.png" alt="AppliedAI 未授权访客（bob）前置权限隔离实测" style="height:60mm;">
+      <div class="fig-cap">未授权访客（左下角 bob 访客）前置 ACL 隔离实测：库内共存有 public / internal / secret 共 5 篇分密级文档，访客可见与可检索范围在检索前即被限制为唯一 1 篇公开文档 Onboarding Handbook（受限切片 0 暴露）。</div>
     </div>
     <div class="fig fig-h-fixed">
-      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261117_%E5%A4%8D%E5%AE%A1%E4%BF%AE%E5%A4%8D/%E5%85%AC%E5%BC%80%E4%BD%9C%E5%93%81%E9%9B%86%E5%BE%85%E5%90%8C%E6%AD%A5/assets/servetrace-logs.png" alt="ServeTrace 调用控制台请求记录与限流状态">
-      <div class="fig-cap">ServeTrace 调用控制台：支持按时间、调用者、结果（success / rate_limited）与请求编号组合排查，且默认不保存完整提示词以保护隐私。</div>
+      <img src="../assets/servetrace-focus.png" alt="ServeTrace 调用控制台请求记录与限流状态" style="height:60mm;">
+      <div class="fig-cap">ServeTrace 调用控制台（局部放大）：支持按时间、调用者、结果（success / rate_limited）与请求编号组合排查耗时，默认脱敏不保存完整提示词。</div>
     </div>
   </div>
 
@@ -361,16 +375,16 @@
     </tbody>
   </table>
 
-  <h3>权限对照验收、安全收口与网关治理规则</h3>
+  <h3>权限对照验收、异常兜底与网关日志规则</h3>
   <table>
     <thead>
-      <tr><th style="width:22%;">治理模块</th><th style="width:44%;">产品规则与交互设计</th><th style="width:34%;">已验证行为与适用边界</th></tr>
+      <tr><th style="width:22%;">功能模块</th><th style="width:44%;">产品规则与交互设计</th><th style="width:34%;">已验证行为与适用边界</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>前置 ACL 正反对照</strong></td><td>构建“同题双身份（未授权 vs 授权）+ 公开题基线”对照用例，同步校验越权拦截与合法召回</td><td>5 篇分密级演示文档下双检索路径均通过 9 组对照（未授权 0/9、授权 9/9、公开 2/2），验证检索层隔离规则生效</td></tr>
-      <tr><td><strong>真实模型端到端收口</strong></td><td>本地接入 Qwen3.5-27B + BGE 中文嵌入：带引用点击查看原文、无依据问题显式拒答、权限撤销后历史脱敏且移出上下文、禁止静默回退模拟回答</td><td>已跑通登录、资料库分权、访客隔离、引用溯源、多轮追问与重启恢复全流程走查</td></tr>
-      <tr><td><strong>工具调用契约</strong></td><td>定义工具白名单、调用参数校验及执行失败 / 超时 / 未知工具三类结构化错误兜底</td><td>10 组固定路由用例与三类异常分支全部通过；真实模型多步自主规划列为后续迭代项</td></tr>
-      <tr><td><strong>ServeTrace 网关治理</strong></td><td>凭证生命周期（创建仅显一次明文、掩码列表、停用与删除分级拦截）、单 Key 滑动窗口限流与重试引导、请求 ID 贯穿日志</td><td>支持 Redis / Memory 双限流后端与非流式稳定转发，默认脱敏不落盘完整 Prompt</td></tr>
+      <tr><td><strong>前置 ACL 正反对照</strong></td><td>构建“同题双身份（未授权 vs 授权）+ 公开题基线”对照用例，同步校验越权拦截与合法召回</td><td>5 篇分密级演示文档下 FTS5 / Chroma 双路径均通过 9 组对照（未授权 0/9、授权 9/9、公开 2/2）</td></tr>
+      <tr><td><strong>真实模型端到端联调</strong></td><td>本地接入 Qwen3.5-27B + BGE 中文嵌入：带引用点击查看原文、无依据问题显式拒答、权限撤销后历史脱敏且移出上下文、禁止静默回退模拟回答</td><td>已跑通登录、资料库分权、访客隔离、引用溯源、多轮追问与重启恢复全流程走查</td></tr>
+      <tr><td><strong>工具调用契约</strong></td><td>定义工具白名单、调用参数校验及执行失败 / 超时 / 未知工具三类结构化错误兜底</td><td>10 组固定路由用例加 3 类异常分支在 Mock 环境全部通过；真实模型多步自主规划列为后续迭代项</td></tr>
+      <tr><td><strong>ServeTrace 转发网关</strong></td><td>凭证生命周期（创建仅显一次明文、掩码列表、停用与删除分级拦截）、单 Key 滑动窗口限流与重试引导、请求 ID 贯穿日志</td><td>支持 Redis / 内存双限流后端与非流式稳定转发，默认脱敏不落盘完整 Prompt</td></tr>
     </tbody>
   </table>
 
@@ -380,24 +394,24 @@
   </div>
 </div>
 
-<!-- PAGE 4: Data Analysis & SQL -->
+<!-- PAGE 4: Data Analysis, SQL & Spark -->
 <div class="page">
   <div class="p-header">
-    <div class="p-kicker">Case 04 · Business Decision Analytics & SQL Data Governance</div>
-    <div class="p-title">数据分析实践：外呼阈值净收益比较与 PostgreSQL 清洗治理</div>
-    <div class="p-sub">课程与业务扩展项目 · PySpark 分类决策分析 & PostgreSQL 关系建模核验</div>
+    <div class="p-kicker">Case 04 · Business Decision Analytics, SQL Quality & Distributed Spark</div>
+    <div class="p-title">数据实践：外呼阈值 ROI、PostgreSQL 清洗与 Spark 四节点集群</div>
+    <div class="p-sub">课程与扩展分析项目 · PySpark 决策测算、PostgreSQL 关系建模 & HDFS/Spark 462 万行聚合</div>
   </div>
 
-  <h3 style="margin-top:0;">一、银行营销外呼筛选：从模型阈值到成本收益与固定预算排序</h3>
-  <p class="body">基于 UCI Bank Marketing（45,211 条样本），针对“外呼前候选人筛选”剔除通话后才获知的特征泄漏字段 <code>duration</code>，训练集拟合 PySpark 预处理与逻辑回归并在 8,907 条独立测试集核验，进一步将混淆矩阵转化为<strong>外呼成本收益矩阵</strong>与<strong>固定人力预算 Top-K 排序</strong>。</p>
+  <h3 style="margin-top:0;">一、银行营销外呼筛选：从模型阈值到成本收益与固定预算排序（CSI205 个人项目）</h3>
+  <p class="body">基于 UCI Bank Marketing（45,211 条样本），剔除通话结束后才产生的事后泄漏字段 <code>duration</code>，在 8,907 条独立测试集扫描逻辑回归分类阈值，将混淆矩阵转化为<strong>外呼成本收益敏感性矩阵</strong>与<strong>固定坐席预算 Top-K 排序</strong>。</p>
 
-  <div class="grid-2" style="align-items:center;">
+  <div class="grid-2" style="align-items:center;margin-bottom:4pt;">
     <div class="fig">
-      <img src="file:///Users/freewill/Documents/%E9%9A%8F%E6%84%8F%E9%9A%8F%E5%BF%83/%E5%A4%A7%E5%AD%A6/%E6%88%91%E7%9A%84/AI%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF/outputs/20261110_%E6%B1%82%E8%81%8C%E5%AE%9E%E6%B5%8B/bank_marketing/threshold_tradeoff.png" alt="不同阈值下的 TP 与 FP 变化曲线" style="max-height:46mm;object-fit:contain;">
+      <img src="../assets/threshold_tradeoff.png" alt="不同阈值下的 TP 与 FP 变化曲线" style="max-height:39mm;object-fit:contain;">
       <div class="fig-cap">测试集（n=8,907）阈值扫描：从 0.50 降至 0.20 新增 677 个外呼目标，其中 268 正例、409 误报（边际命中率 39.6%）。</div>
     </div>
     <div>
-      <table style="margin-top:0;margin-bottom:5pt;">
+      <table style="margin-top:0;margin-bottom:4pt;">
         <thead>
           <tr><th>外呼预算 Top-K</th><th>历史正例</th><th>历史命中率</th></tr>
         </thead>
@@ -420,20 +434,31 @@
       </table>
     </div>
   </div>
-  <div class="note" style="margin-bottom:7pt;">口径说明：成本与单客价值为决策敏感性假设参数；历史观测正例命中不等同于外呼带来的因果增量转化，真实上线需以 A/B 对照实验验证。</div>
+  <div class="note" style="margin-bottom:4.5pt;">口径说明：成本与单客价值为决策敏感性假设参数；历史观测正例命中不等同于外呼因果增量转化，真实上线需以 A/B 对照实验验证。</div>
 
-  <h3>二、Film Database System：PostgreSQL 关系建模、异常隔离与分母口径治理</h3>
-  <p class="body">对 4 张归档源表（38,105 行）完成暂存导入、类型与日期清洗及外键校验：正式入库 38,006 行，按原因隔离 99 条无效关联（76 条孤儿角色、23 条无效评分）；修复 <code>UNION ALL</code> 跨表类型冲突及 ISO / Excel 混合日期解析缺陷，恢复 83 个出生年与 1 个死亡年，并沉淀 12 条分析 SQL 与 4 张视图。</p>
+  <h3>二、Film Database System：PostgreSQL 关系建模、异常隔离与分母界定（个人项目）</h3>
+  <p class="body">围绕 4 张源表（38,105 行）设计 3NF 关系模式与外键约束：入库 38,006 行干净数据，按原因隔离 99 条异常关联（76 条孤儿角色、23 条关联失效评分）；修复 ISO / Excel 混合日期解析缺陷恢复 83 个出生年，并沉淀 12 条核验 SQL。</p>
 
-  <table>
+  <table style="margin-bottom:4.5pt;">
     <thead>
-      <tr><th style="width:18%;">正式数据表</th><th style="width:16%;">入库行数</th><th style="width:18%;">隔离异常行数</th><th style="width:48%;">关键数据质量与指标口径治理结论</th></tr>
+      <tr><th style="width:18%;">正式数据表</th><th style="width:14%;">入库行数</th><th style="width:16%;">隔离异常行数</th><th style="width:52%;">关键数据质量与统计分母核验结论</th></tr>
     </thead>
     <tbody>
-      <tr><td>films（电影）</td><td>4,949</td><td>0</td><td>仅 952 部有评分记录（19.2%），分析评分覆盖时严禁将 4,945 条评分行数误作电影分母</td></tr>
+      <tr><td>films（电影）</td><td>4,949</td><td>0</td><td>仅 952 部含评分记录（19.2%），严格区分评论行数（4,945）与影片总数分母</td></tr>
       <tr><td>people（人物）</td><td>8,397</td><td>0</td><td>兼容 ISO 与 Excel 序列日期后，有效出生年由 6,069 恢复至 6,152，消除 83 条误置空</td></tr>
       <tr><td>roles（角色关联）</td><td>19,715</td><td>76</td><td>隔离引用不存在影片 ID 的孤儿记录；明确人物关联统计包含导演等全角色口径</td></tr>
-      <tr><td>reviews（评分）</td><td>4,945</td><td>23</td><td>隔离缺影片 ID（19）与无效外键（4）；明确源表缺失 genre/review_date 字段，不输出伪结论</td></tr>
+      <tr><td>reviews（评分）</td><td>4,945</td><td>23</td><td>隔离缺影片 ID（19 条）与无效外键（4 条）；明确缺失 genre / review_date 字段边界</td></tr>
+    </tbody>
+  </table>
+
+  <h3>三、HDFS + Spark 四节点集群：462 万条电商评论聚合与跨机耗时剖析（CSI205 · 4 人小组）</h3>
+  <table>
+    <thead>
+      <tr><th style="width:22%;">工程与分析维度</th><th style="width:38%;">集群配置与数据处理口径</th><th style="width:40%;">实测结果与阶段耗时归因</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>多节点部署与聚合</strong></td><td>4 台异构主机（1 Master + 3 Worker，HDFS 128 MiB 双副本，Spark 3 Executors 单节点各 1 核 / 2 GiB 共 6 GiB）</td><td>关联 8 分片 Parquet（<strong>4,624,615</strong> 条评论、137,249 件商品、54 类目），6 轮运行与基准 SQL 逐字节一致；识别头部双类目占 62.94% 评论量</td></tr>
+      <tr><td><strong>跨机排障与瓶颈定位</strong></td><td>定位并放行 Worker 节点 UFW 拦截的 DataNode（TCP 9866）与固定 BlockManager（TCP 7337）端口</td><td>单机 4 虚机中位 <strong>11.22s</strong> vs 四物理机无线桥接 <strong>36.42s</strong>：双 <code>COUNT(DISTINCT)</code> 触发 Expand 膨胀（1,387 万行）叠加高无线 RTT（183–209 ms）使 Shuffle 由 2.19s 增至 17.91s</td></tr>
     </tbody>
   </table>
 
