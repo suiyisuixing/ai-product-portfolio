@@ -1,6 +1,6 @@
 # ClassNote AI · 本地优先的双语课堂工作台
 
-个人项目（2026.05 至今） · macOS 安装版主力实测交付（另含 Windows 打包配置） · [查看完整全线 PRD](../prds/classnote-ai-prd.md)
+个人项目（2026.05 – 2026.11） · macOS 安装版主力实测交付（另含 Windows 打包配置） · [查看完整全线 PRD](../prds/classnote-ai-prd.md)
 
 上全英文授课专业课时，学生往往需要边看竖版 PDF 课件，边录音、看双语字幕和记笔记。教室网络常有波动，课后复习又要按专业术语找回当时的原声与课件页。ClassNote AI 把课堂采集、本地 `faster-whisper` 转写翻译与课后知识检索整合进单一桌面工作台（主力在 macOS 构建交付 DMG 安装版并完成真实课堂实测与恢复验收，仓库内同时编写了 Windows PyInstaller 打包配置规格 `installer/windows/classnoteai.spec`）。
 

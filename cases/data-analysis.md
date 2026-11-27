@@ -36,6 +36,6 @@
 | roles | 19,715 | 自动隔离 76 条引用不存在影片 ID 的孤儿角色外键记录。 |
 | reviews | 4,945 | 自动隔离 23 条异常评分（19 条缺影片 ID、4 条外键无效）。 |
 
-4,945 条有效评分仅覆盖 **952 部**不同电影，因此全量电影评分覆盖率为 **952 ÷ 4,949 = 19.2%**（同一电影多条评分在覆盖率分子中仅计一次），必须与「有评影片均分」严格拆分分母。项目沉淀了 12 条核验 SQL 与 4 张视图。[Film DB 源码](https://github.com/suiyisuixing/film-database-system)
+4,945 条有效评分仅覆盖 **952 部**不同电影，因此全量电影评分覆盖率为 **952 ÷ 4,949 = 19.2%**（同一电影多条评分在覆盖率分子中仅计一次），必须与「有评影片均分」严格拆分分母。项目在公开仓库 `sql/` 目录下沉淀了 **12 条可复现核验 SQL**（`09_validation_checks.sql`）与 **4 张统计视图**（`08_views.sql`）。[Film DB 源码](https://github.com/suiyisuixing/film-database-system)
 
 [下一案例 · 大数据与分布式工程](bigdata-hdfs-spark.md) · [返回案例目录](../README.md) · [四页作品集 PDF](../portfolio/yu-wei-portfolio.pdf)
